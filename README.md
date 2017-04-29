@@ -26,17 +26,15 @@ REQUISITI
 ISTRUZIONI PER L'INSTALLAZIONE
 --------------------------------------------------------
 
-1. 	Dopo aver scaricato e decompresso il file di origine,
+1. 	Dopo aver scaricato i file di origine,
 	Copiarlo nella directory principale del vostro dominio
 	
 2.	Preparare il database seguendo le istruzioni contenute
-	all'interno
+	all'interno del manuale: http://www.sinx.it/Download/Manuale_097.pdf
 
-3.	In alternativa al file è presente il manuale in pdf
+3.	Avviare l'installer con il comando http://propriodominio/Install
 
-4.	Avviare l'installer con il comando http://propriodominio/Install
-
-5.	Seguiti tutti i passi del manuale è possibile avviare il
+4.	Seguiti tutti i passi del manuale è possibile avviare il
 	programma
 	
 	
