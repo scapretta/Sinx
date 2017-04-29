@@ -1,0 +1,41 @@
+25 01 16 0.97.7
+Correzione inserimento ricevute con aggiunta di indirizzo e cf o pi nel nome, modifica db tabella ricevute: ALTER TABLE tb_ricevute MODIFY nome VARCHAR(150);, ALTER TABLE tb_primanota MODIFY descrizione VARCHAR(150);, ALTER TABLE tb_anagrafe MODIFY nome VARCHAR(150);
+
+01 07 16 0.97.8
+Modifica tabelle: ALTER TABLE tb_conto_economico MODIFY descrizione VARCHAR(255);
+ALTER TABLE tb_anagrafe_associaz MODIFY nome VARCHAR(170);
+ALTER TABLE tb_primanota MODIFY nome VARCHAR(150);
+
+06 07 16 0.97.9
+Modifica modulo file: è possibile aggiungere cartelle tramite ftp e sinx elencherà i file in automatico
+
+04 08 16 0.98.0
+Nuovo modulo "Blocco Note" con aggiunta tabella nel database inserimento in fase d'installazione.
+Creata schermata in index delle note
+
+08 08 16 0.98.1
+Migrazione a php7 comandi deprecati mysql_* grazie al supporto di Angelo Romanò
+
+10 08 16 0.98.2
+Correzione libro soci numero di tessere
+
+12 08 16 0.98.3
+Modifica pagina dei file e immagini; dalla cartella Download di Sinx è possibile creare directory e caricare file come si preferisce, nella pagina il programma crea una struttura ad albero e visualizza tutti i file in ordine alfabetico; i file sono linkabili.
+
+13 08 16 0.98.4
+Modifica css caselle input obbligatorie, cancellazione utente con combobox, continuazione migrazione php7 pagine mancanti
+
+17 08 16 0.98.5
+Aggiunto link a menu' per informativa licenza gpl, avanzamento traduzione inglese delle pagine mancanti
+
+18 08 16 0.98.6
+Inserita la possibilità di modificare la password utente; ogni utente può gestire la propria password ed il prorpio nome. la schermata per gli utenti con un livello diverso da 'admin' non offre la possibilità di cambiare il livello dell'utente nè di agire sugli altri utenti.
+
+19 08 16 0.98.7
+Inserito le note personali per ugni utente con modifica del database utenti: ALTER TABLE utenti ADD note text;
+
+01 09 16 0.98.8
+Correzione permessi utenti associato e limitato in contabilità prima nota, quietanza/ricevuta e fattura
+
+09 09 16 0.98.9
+Correzione filtro controllo inserimento dati
