@@ -38,7 +38,7 @@ include('./menu.inc');
 <br>
 <!--Visualizza il numero di tessere -->
 <table><tr><td>
-<form action='./stampa_soci.php' method='POST' target='_blank'>
+<form action='./stampa_lista_tessere.php' method='POST' target='_blank'>
 <button name='ordine' type='submit' value="ntessera"><? echo $Ltessere; ?></button>
 </form></td>
 <td><form action='./Scheda_regioni.php' method='POST'>
