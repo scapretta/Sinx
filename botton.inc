@@ -51,6 +51,18 @@ Sinx for Association - Gestionale per Associazioni no-profit
   </tbody>
 </table>
 
+<!-- Tasti scelta rapida -->
+<center>
+    <a href="./pre_stampa_soci.php"><img src="./ImmTemplate/Pulsanti/LibroSoci.png"></a>
+    <a href="./Rubrica.php"><img src="./ImmTemplate/Pulsanti/Rubrica.png"></a>
+    <a href="./Manuale.php"><img src="./ImmTemplate/Pulsanti/Manuale2.png"></a>
+    <a href="./InsPrimanota.php"><img src="./ImmTemplate/Pulsanti/PrimaNota.png"></a>
+    <a href="./InsRicFisc.php"><img src="./ImmTemplate/Pulsanti/Ricevuta.png"></a>
+    <a href="./InsFattura.php"><img src="./ImmTemplate/Pulsanti/Fattura.png"></a>
+    <a href="./Calendario2.php"><img src="./ImmTemplate/Pulsanti/Calendario.png"></a>
+    <a href="./Rip_database.php"><img src="./ImmTemplate/Pulsanti/Backup.png"></a>
+</center>
+
 <!-- Copyright -->
 <small><center><font color="#a1a1a1"><i>
 <blockquote>Sinx for Association Copyright (C) 2011-2016  by Sergio Capretta
