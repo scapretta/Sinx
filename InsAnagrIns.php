@@ -65,7 +65,7 @@ include('./menu.inc');
 <?php
 $query = "SELECT materia FROM tb_materia";
  
-$rs=mysqli_query($query)
+$rs=mysqli_query($connect, $query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
 while ($row=mysqli_fetch_row($rs))
