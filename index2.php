@@ -36,6 +36,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
   session_start();
 
 $user = $_SESSION['utente'];
+$nutente = $_SESSION['nome'];
 $langu = $_SESSION['lingua'];
 $paginaindex2 = "index2.inc";
 $linguaindex2 = ($langu.$paginaindex2);
@@ -50,7 +51,7 @@ include('./menu.inc');
 
 
 ?>
-<h2><? echo $Lbenvenuto; ?></h2>
+<h2><? echo $Lbenvenuto.chr(32).$nutente; ?></h2>
 
       <div style="margin-left: 20px;"><small><? echo $Lfrase; ?></center></div></small>
 <?php

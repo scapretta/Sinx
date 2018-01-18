@@ -68,13 +68,13 @@ $row=mysqli_fetch_array($rs);
 <br>
 
       <form action='./conf_mod_Associaz.php' method='POST' enctype="multipart/form-data">
-<table align='center' width='50%'>
+<table align='center' width='80%'>
 <tbody>
 	    <tr>
               <td width='70%'><?php echo $Llogoassociaz; ?></td>
               <td><img src='./Immagini/logo.png' width="100px"></td>
               
-              <td><input type="button" value=<? echo $Lcambialogo; ?> onclick="top.location.href = './gest_files.php'" <?php echo($limit); echo($limite);?>/></td>
+              <td><input type="button" <?php echo($limit);?> <? echo($limite);?> value=<? echo $Lcambialogo; ?> onclick="top.location.href = './gest_files.php'" /></td>
             </tr>
 	    <tr>
               <td width='70%'><font color="red"><?php echo $Lnomeassociaz; ?></td>
@@ -121,12 +121,56 @@ $row=mysqli_fetch_array($rs);
               <td><input name='webmail' size='30%' placeholder='http://webmail.dominio.xxx' type='text' value='<?php echo $row['webmail'] ?>'></td>
             </tr>
             <tr>
+              <td width='70%'><?php echo $LPEC; ?></td>
+              <td><input name='PEC' size='30%' type='text' value='<?php echo $row['PEC'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $LwebPEC; ?></td>
+              <td><input name='webPEC' size='30%' type='text' value='<?php echo $row['webPEC'] ?>'></td>
+            </tr>
+            <tr>
               <td width='70%'><?php echo ($Lindirizzo.$Lsito); ?></td>
               <td><input name='sito' size='30%' placeholder='http://www.sito.xxx' type='text' value='<?php echo $row['sito'] ?>'></td>
             </tr>
             <tr>
+              <td width='70%'><?php echo $Lfacebook; ?></td>
+              <td><input name='facebook' size='30%' type='text' value='<?php echo $row['facebook'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $Linstagram; ?></td>
+              <td><input name='instagram' size='30%' type='text' value='<?php echo $row['instagram'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $Ltwitter; ?></td>
+              <td><input name='twitter' size='30%' type='text' value='<?php echo $row['twitter'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $Lyoutube; ?></td>
+              <td><input name='youtube' size='30%' type='text' value='<?php echo $row['youtube'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $Lbanca; ?></td>
+              <td><input name='banca' size='30%' type='text' value='<?php echo $row['banca'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $LIBAN; ?></td>
+              <td><input name='IBAN' size='30%' type='text' value='<?php echo $row['IBAN'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $LBIC; ?></td>
+              <td><input name='BIC' size='30%' type='text' value='<?php echo $row['BIC'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $LHomeBanking; ?></td>
+              <td><input name='HomeBanking' size='30%' type='text' value='<?php echo $row['HomeBanking'] ?>'></td>
+            </tr>
+            <tr>
+              <td width='70%'><?php echo $LIscrizioneODVoAPS; ?></td>
+              <td><input name='IscrizioneODVoAPS' size='30%' type='text' value='<?php echo $row['IscrizioneODVoAPS'] ?>'></td>
+            </tr>
+            <tr>
               <td colspan='2' align='center'>
-              <input value=<? echo $Linvia; ?> type='submit' <?php echo($limit); echo($limite);?>></td>
+              <input value=<? echo $Linvia; ?> type='submit' <?php echo($limit);?> <? echo($limite);?>></td>
             </tr>
 </table>
 </form>

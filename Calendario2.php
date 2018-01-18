@@ -240,7 +240,7 @@ echo $Lnoeventical2;
 <h3>Tutti gli appuntamenti registrati</h3>
 
  <form action='./Canc_Calendario.php'>
- <center><button name="cancella" type="submit">
+ <center><button name="cancella" type="submit" disabled=' <?php echo($limit);?>' disabled= ' <? echo($limite);?>'>
    Pulisci appuntamenti calendario
  </button></center>
  </form>
@@ -277,6 +277,10 @@ echo <<<EOT
 </table>
 EOT;
 }
+
+// CALENDARIO GOOGLE
+include ('./calgoogle.inc');
+
 
 mysqli_close($connect);
 include('./menusx.inc');

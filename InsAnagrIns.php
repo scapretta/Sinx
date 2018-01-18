@@ -28,8 +28,7 @@ include('./top.inc');
 include('./menu.inc');
 
 	include ('./dati_db.inc');
-	mysql_connect("$host", "$username", "$password")or die("cannot connect");
-	mysql_select_db("$db_name")or die("cannot select DB");
+	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
 
 ?>
 
@@ -38,7 +37,7 @@ include('./menu.inc');
 <br>
 <!--Visualizza il numero di tessere -->
 <table><tr><td>
-<form action='./stampa_soci.php' method='POST' target='_blank'>
+<form action='./stampa_lista_tessere.php' method='POST' target='_blank'>
 <button name='ordine' type='submit' value="ntessera"><? echo $Ltessere; ?></button>
 </form></td>
 <td><form action='./Scheda_regioni.php' method='POST'>
@@ -66,15 +65,15 @@ include('./menu.inc');
 <?php
 $query = "SELECT materia FROM tb_materia";
  
-$rs=mysql_query($query)
+$rs=mysqli_query($connect, $query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
-while ($row=mysql_fetch_row($rs))
+while ($row=mysqli_fetch_row($rs))
 {
 echo "<option>" .$row["0"]. "</option>";
 
 }
-mysql_close();
+mysqli_close();
 ?>
 
   </select></td>

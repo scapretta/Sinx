@@ -30,7 +30,7 @@ ISTRUZIONI PER L'INSTALLAZIONE
 	Copiarlo nella directory principale del vostro dominio
 	
 2.	Preparare il database seguendo le istruzioni contenute
-	all'interno del manuale: http://www.sinx.it/Download/Manuale_097.pdf
+	all'interno del manuale: http://www.mokazine.com/read/sinx/manuale-di-sinx-versione-0-97
 
 3.	Avviare l'installer con il comando http://propriodominio/Install
 

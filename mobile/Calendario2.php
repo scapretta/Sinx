@@ -167,7 +167,8 @@ $paginacalendario = "calendario2.inc";
 $linguacalendario = ($langcalendario.$paginacalendario);
 include($linguacalendario);
 
-
+include('./top.inc');
+include('./menu.inc');
 	include ('./dati_db.inc');
 	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
 
@@ -277,7 +278,12 @@ echo <<<EOT
 EOT;
 }
 
+// CALENDARIO GOOGLE
+include ('./calgoogle.inc');
+
+
 mysqli_close($connect);
+include('./menusx.inc');
 ?><hr><img src='./Immagini/suggerimento.png'><small><i><?php echo $Lsugg2cal2 ?><hr></i></small>
 <?
 include('./botton.inc');
