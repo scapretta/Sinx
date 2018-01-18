@@ -30,7 +30,7 @@ include('./Intestazione.php');
 
 <?php
 $classe = $_POST['classi'];
-$Query_nome = "SELECT * FROM tb_anagrafe WHERE tipologia = 'Ins' OR tipologia = 'Stud' ORDER BY ntessera";
+$Query_nome = "SELECT * FROM tb_anagrafe WHERE tipologia != 'Extra' AND associato = 'si' ORDER BY ntessera";
 
 $rs=mysqli_query($connect, $Query_nome)
 or die("Errore nella query $query: " . mysqli_error()); //die("<b>Errore:</b> Impossibile eseguire la query della Combo");
