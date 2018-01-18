@@ -1,0 +1,47 @@
+
+
+
+    Bug:
+
+        Fase installazione:
+            Accesso senza database presente,  la pagina di errore dovrebbe avere una grafica migliore (link al manuale?)
+            Logo associazione se errato, la pagina di errore dovrebbe avere una grafica migliore (link al manuale?)
+            Logo associazione perchè è limitata a 30 Kb??
+            Logo associazione caricata con successo, la pagina dovrebbe avere una grafica migliore
+            Dati associazione specificare i campi obbligatori (colore rosso secondo me nn è sufficente)
+            Dati associazione, pagina di errore dovrebbe avere una grafica migliore
+            Installazione Effettuata dovrebbe avere una grafica migliore.
+            Richiesta di php 7.0 nella fase di installazione 
+            Specificare che servono i short_tag_open=On in php.ini
+    
+    Applicazione:
+
+        1   In dati_Associaz.php va disabilitatà la cache con i metatag in quanto al cambio logo con "chrome" mantiene l'immagine vecchia
+        2   In dati_Associaz.php il placeholder del campo mail dovrebbe essere sostituito con admin@dominio.xxx
+
+        3    Nella gestione dei file gli errori di permessi dovrebbero indicare in che directory mancano gli stessi
+
+        4ok InsAnagrStud.php nel campo funzione (drop-down menu) se lasciato il valore default "funzione" consente l'invio del form, nn si comporta come gli altri campi obbligatori
+        5   InsAnagrStud.php - regione - provincia - comune dovrebbero, "filtrarsi" a vicenda es. riesco a inserire che la provincia di bari è in abruzzo.
+
+        6ok InsRicFisc.php data servirebbe un data picker
+        7   InsRicFisc.php se lascio "causale" nel drop-down menu in conto economico nn mi appare il valore inserito mentre è corretamente presente in elenco ricevute
+
+        8   InsFattura.php data servirebbe un data picker
+        9   InsFattura.php campo iva permette di inserire testo dovrebbe controllare che siano numeri
+
+        10   InsContoEconomico.php campo valore check con pattern, dovrebbe controllare che siano numeri
+        11   InsStatoPatrimoniale.php campo valore check con pattern, dovrebbe controllare che siano numeri
+        12   CompModuli.php secondo me da rivedere
+
+
+  Fix:
+  
+  4 aggiunto l'attributo required sul campo funzione tag select 
+  6 aggiunto l'attribto type="date" sul tag input
+  
+
+
+  Possibili migliorie:
+
+  voce menu: "quietanza" cambiarla in "ricevute" (più chiaro)   

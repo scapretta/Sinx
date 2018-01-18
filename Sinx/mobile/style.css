@@ -1,0 +1,178 @@
+/* css */
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@charset 'UTF-8';
+/* Base Styles */
+#cssmenu,
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+#cssmenu a {
+  line-height: 1.3;
+  padding: 6px 15px;
+}
+#cssmenu {
+  width: 200px;
+}
+#cssmenu > ul > li {
+  cursor: pointer;
+  background: #000;
+  border-bottom: 1px solid #797a80;
+}
+#cssmenu > ul > li:last-child {
+  border-bottom: 1px solid #3e3d3c;
+}
+#cssmenu > ul > li > a {
+  font-size: 13px;
+  display: block;
+  color: #ffffff;
+  text-shadow: 0 1px 1px #000;
+  background: #6a6b72;
+  background: -moz-linear-gradient(#6a6b72 0%, #4c4e53 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6a6b72), color-stop(100%, #4c4e53));
+  background: -webkit-linear-gradient(#6a6b72 0%, #4c4e53 100%);
+  background: linear-gradient(#6a6b72 0%, #4c4e53 100%);
+}
+#cssmenu > ul > li > a:hover {
+  text-decoration: none;
+}
+#cssmenu > ul > li.active {
+  border-bottom: none;
+}
+#cssmenu > ul > li.active > a {
+  background: #ace5a1;
+  background: -moz-linear-gradient(#ace5a1 0%, #709400 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ace5a1), color-stop(100%, #709400));
+  background: -webkit-linear-gradient(#ace5a1 0%, #709400 100%);
+  background: linear-gradient(#ace5a1 0%, #709400 100%);
+  color: #4e5800;
+  text-shadow: 0 1px 1px #a5ce27;
+}
+#cssmenu > ul > li.has-sub > a:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 5px solid transparent;
+  border-left: 5px solid #ffffff;
+}
+#cssmenu > ul > li.has-sub.active > a:after {
+  right: 14px;
+  top: 12px;
+  border: 5px solid transparent;
+  border-top: 5px solid #4e5800;
+}
+/* Sub menu */
+#cssmenu ul ul {
+  padding: 0;
+  display: none;
+}
+#cssmenu ul ul a {
+  background: #efefef;
+  display: block;
+  color: #797979;
+  font-size: 13px;
+}
+#cssmenu ul ul li {
+  border-bottom: 1px solid #c9c9c9;
+}
+#cssmenu ul ul li.odd a {
+  background: #e5e5e5;
+}
+#cssmenu ul ul li:last-child {
+  border: none;
+}
+
+
+
+/* bakground dello sfondo */
+body {
+  background-image: url(./ImmTemplate/Sfondo_banner.png);
+  background-attachment: fixed;
+  font-size: 18px; font-family: "thimes new roman", thimes, "sans serif", serif;
+}
+
+div::first-letter {
+  color: red;
+  font-size: 250%;
+  float: left;
+}
+
+a.transp:hover {
+  opacity:0.60;
+  filter:alpha(opacity=60);
+  filter:'alpha(opacity=60)';
+}
+
+a:link    {text-decoration: none; color: brown;}
+a:visited {text-decoration: none; color: green;}
+a:hover   {color: red;}
+a {
+    text-shadow: -5pt 2pt 4pt #999;
+}
+
+h1, h2, h3 {
+  color: #c96013;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: -5pt 2pt 4pt #999;
+}
+
+hr {
+  text-align: center;
+}
+
+img { border: 0px solid #000; }
+
+.bordo {
+  border: 2px solid #222;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 10px 2px #333333;
+  
+}
+
+.header {
+  text-align: left;
+  width: 100%;
+  background-image: url(./ImmTemplate/Sfondo_banner_rid.jpg);
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.column {
+  -moz-column-count: 2;
+  -moz-column-gap: 20pt;
+  -moz-column-rule: 1px solid #aaa;
+  
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20pt;
+  -webkit-column-rule: 1px solid #aaa;
+  
+  column-count: 2;
+  column-gap: 20pt;
+  column-rule: 1px solid #aaa;
+}
+
+textarea {
+	background: #faffaa;
+}
+
+input:focus {
+	
+}
+input[required] {
+	border: 1px solid red;
+}
+	
