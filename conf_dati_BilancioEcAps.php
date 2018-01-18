@@ -135,7 +135,7 @@ echo <<<html
         <table align='center' border='0' width='90%'>
           <tbody>
 
-	    <tr bgcolor='pink'>
+	    <tr bgcolor='green'>
 	      <td colspan='4' align='center'><h3>Entrate<h3></td>
 	    </tr>
         <tr>
@@ -166,19 +166,19 @@ echo <<<html
         </tr>
             <tr>
               <td></td>
-		<td><small>2.1 da soci $nTitolo21</small></td>
+		<td><small>2.1 da soci <b>$nTitolo21</b></small></td>
 		  <td>$nValore21</td>
 	<td></td>
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.2 da non soci $nTitolo22</small></td>
+		<td><small>2.2 da non soci <b>$nTitolo22</b></small></td>
 		  <td>$nValore22</td>
 	<td></td>	    
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.3 da enti pubblici $nTitolo23</small></td>
+		<td><small>2.3 da enti pubblici <b>$nTitolo23<b/></small></td>
 		  <td>$nValore23</td>
 	<td></td>
 	    </tr>
@@ -196,7 +196,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.6 altro $nTitolo26</small></td>
+		<td><small>2.6 altro <b>$nTitolo26</b></small></td>
 		  <td>$nValore26</td>
 	<td></td>
 	    </tr>
@@ -244,7 +244,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>5.3 altre entrate: $nTitolo53</td>
+		<td><small>5.3 altre entrate: <b>$nTitolo53</b></td>
 		  <td>$nValore53</td>
 	<td></td>
 	    </tr>
@@ -266,7 +266,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>6.3 altro: $nTitolo63</small></td>
+		<td><small>6.3 altro: <b>$nTitolo63</b></small></td>
 		  <td>$nValore63</td>
 	    </tr>
 	<tr>
@@ -276,7 +276,7 @@ echo <<<html
 	<td><b>$totaleent</b></td>
 
 
-	    <tr bgcolor='pink'>
+	    <tr bgcolor='red'>
 	      <td colspan='4' align='center'><h3>Uscite<h3></td>
 	    </tr>
         <tr>
@@ -376,12 +376,12 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>10.2 Quote associative ad organizzazioni collegate: $nTitolo102</small></td>
+		<td><small>10.2 Quote associative ad organizzazioni collegate: <b>$nTitolo102</b></small></td>
 		  <td>$nValoreC102</td>
 	    </tr>
            <tr>
               <td></td>
-		<td><small>10.3 altro $nTitolo103</small></td>
+		<td><small>10.3 altro <b>$nTitolo103</b></small></td>
 		  <td>$nValoreC103</td>
 	    </tr>
       <tr>
@@ -391,7 +391,7 @@ echo <<<html
 	<td><b>$totaleusc</b></td>
       </tr>
       <tr>
-	<td><b><hr>TOTALE <br>ENTRATE-USCITE</b></td>
+	<td><b>TOTALE ENTRATE-USCITE</b></td>
 	<td></td>
 	<td></td>
 	<td><b>$nTotEU</b></td>
