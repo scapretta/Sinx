@@ -36,19 +36,10 @@ Sinx for Association - Gestionale per Associazioni no-profit
 
 $user = $_SESSION['utente'];
 
-if ($user == 'admin') {
-  $limit=''; $limite='';
-} else if ($user == 'limitato') {
-  $limit='disabled'; $limite='';
-} else if ($user == 'operatore') {
-  $limit='disabled'; $limite='';
-} else if ($user == 'associato') {
-  $limit='disabled'; $limite='disabled';
-}
-
 
 function ShowCalendar($m,$y)
 {
+
 $langcalendario = $_SESSION['lingua'];
 $paginacalendario = "calendario2.inc";
 $linguacalendario = ($langcalendario.$paginacalendario);
@@ -158,7 +149,6 @@ print("\n\t\t<td align='center'><a href=\"Calendario.php?cod=".$data."&cat=".$da
 }
 
 
-
 function calendario()
 {
 
@@ -169,10 +159,20 @@ include($linguacalendario);
 
 include('./top.inc');
 include('./menu.inc');
+
+
+if ($user == 'admin') {
+  $limit=''; $limite='';
+} else if ($user == 'limitato') {
+  $limit='disabled'; $limite='';
+} else if ($user == 'operatore') {
+  $limit='disabled'; $limite='';
+} else if ($user == 'associato') {
+  $limit='disabled'; $limite='disabled';
+}
+
 	include ('./dati_db.inc');
 	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
-
-
 
 ?>
 
@@ -239,8 +239,9 @@ echo $Lnoeventical2;
 <hr style="width: 80%; height: 2px;">
 <h3>Tutti gli appuntamenti registrati</h3>
 
+
  <form action='./Canc_Calendario.php'>
- <center><button name="cancella" type="submit" disabled=' <?php echo($limit);?>' disabled= ' <? echo($limite);?>'>
+ <center><button <? echo($limit);?><? echo($limite);?> name="cancella" type="submit" >
    Pulisci appuntamenti calendario
  </button></center>
  </form>
