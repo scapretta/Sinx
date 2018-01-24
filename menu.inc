@@ -106,6 +106,7 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
          <li><a href='./InsAnagrStud.php'><span>Axxx -<?echo $Lfondatori; ?></span></a></li>
          <li><a href='./InsAnagrIns.php'><span>Axxx -<? echo $Lassociati; ?></span></a></li>
          <li><a href='./InsAnagrExtra.php'><span>Axxx -<? echo $Laltri; ?></span></a></li>
+         <li><a href='./InsAnagrFile.php'><span>Axxx -<? echo $Limporta; ?></span></a></li>
          <li><a href='./ricerca.php'><span>Aox- -<? echo $Lcerca; ?></span></a></li>
          <li><a href='./Rubrica.php'><span>Aola -<? echo $Lrubrica; ?></span></a></li>
          <li class='last'><a href='./pre_stampa_soci.php'><span>Aola -<? echo $Llibrosoci; ?></span></a></li>

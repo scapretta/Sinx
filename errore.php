@@ -2,11 +2,11 @@
 /*======================================================================+
  File name   : conferma.php
  Begin       : 2010-08-04
- Last Update : 2012-07-08
+ Last Update : 2017-12-20
 
- Description : confirm data
+ Description : error occured
 
- Author: Sergio Capretta
+ Author: Sergio Capretta & Marco Pedrazzi
 
  (c) Copyright:
                Sergio Capretta
@@ -36,15 +36,15 @@ Sinx for Association - Gestionale per Associazioni no-profit
 <head>
   <title>!! Errore !!</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta http-equiv="refresh" content="3;URL=./index2.php">
+  <meta http-equiv="refresh" content="5;URL=<?php echo $_GET['rif'];?>.php">
 </head>
 <body>
 <div style="text-align: center;"><img src='./Immagini/dialog-error.png'><span
  style="font-weight: bold;"><br>
-I DATI NON SONO CORRETTI</span><br>
+<?php echo $_GET['msg'];?></span><br>
 <span style="font-weight: bold;">Se
 la pagina non dovesse ricaricarsi in automatico, <a
- href="./index2.php">premi qui</a></span><br>
+ href="./<?php echo $_GET['rif'].'.php';?>">premi qui</a></span><br>
 </div>
 </body>
 </html>
