@@ -84,5 +84,5 @@ Sinx for Association - Gestionale per Associazioni no-profit
 <hr style="width: 60%; height: 2px">
 
 <?php
-include('./botton.inc');
+include('./botton2.inc');
 ?>
