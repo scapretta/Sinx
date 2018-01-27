@@ -78,6 +78,6 @@ Sinx for Association - Gestionale per Associazioni no-profit
 <p><center><img src='./ImmTemplate/floating_mini_sx.png'><small><i>Sinx is officially registered on <a target='_blank' href='http://savannah.nongnu.org/'>Savannah</a> as free software</i></small><img src='./ImmTemplate/floating_mini.png'></center></p>
 
 <!-- Pulsante fsf member -->
-<center><a href="http://www.fsf.org/register_form?referrer=12556"><img src="http://static.fsf.org/nosvn/associate/fsf-12556.png" alt="[FSF Associate Member]" /></a></center>
+<center><a href="http://www.fsf.org"><img src="./Immagini/646150.png" alt="[FSF Associate Member]" /></a></center>
 </body>
 </html>
