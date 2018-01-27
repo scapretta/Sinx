@@ -53,7 +53,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 
 <!-- Copyright -->
 <small><center><font color="#a1a1a1"><i>
-<blockquote>Sinx for Association Copyright (C) 2011-2016  by Sergio Capretta
+<blockquote>Sinx for Association Copyright (C) 2011-2018  by Sergio Capretta
 
 <div class="p"><!----></div>
   This program comes with ABSOLUTELY NO WARRANTY; for details type
