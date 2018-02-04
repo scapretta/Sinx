@@ -19,3 +19,11 @@ Completamento aggiunta voci associazione, file conf_mod_Associaz.php, datiassoci
 03-12-2017 - Sinx 0.99.2
 
 aggiornamento file top.inc e index2.php con aggiunta informazioni utili e grafica, ampliamento menu Anagrafica Associazione e inserimento dei tasti rapidi (suggerimenti di Ivano Bucelli)
+
+04-02-2017 - Sinx 0.99.3
+
+fix file /install/index.php Correzione bug informazioni nel top (header)
+fix file /install/index.php e conf dati utente controllo campi, da php ad html 5 
+fix file /install/conf_immagine_install sostituito break con return php 7.0 non supporta i break se non nel costrutto switch
+fix file /install/install2 controllo campi, da php ad html 5
+fix file /install/install3.php e confdati utente controllo campi, da php ad html 5 

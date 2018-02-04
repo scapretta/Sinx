@@ -67,21 +67,6 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 
-//Controllo campi compilati
-		if ($nome == "")
- 		{
-   		echo "<center><b>Il campo nome &egrave obbligatorio</b></center>";
-   		redirect('./Install3.php' ,2);
-		break;
-		}
-		if ($cf == "")
- 		{
-   		echo "<center><b>Il campo Codice fiscale &egrave obbligatorio</b></center>";
-   		redirect('./Install3.php' ,2);
-		break;
-		}
-
-
 
 //popolo la tabella
 $tb_anagrafe = ('tb_anagrafe_associaz(nome, indirizzo, numero, cap, citta, provincia, tel, fax, cf, email, webmail, sito)');

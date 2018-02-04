@@ -44,7 +44,7 @@ include('./top.inc');
 <tbody>
  <tr>
               <td width='70%'><font color="red">Nome Associazione:</td>
-              <td><input name='nome' size='30%' type='text'></td>
+              <td><input name='nome' size='30%' type='text' required></td>
             </tr>
             <tr>
               <td width='70%'>Via:</td>
@@ -76,7 +76,7 @@ include('./top.inc');
             </tr>
             <tr>
               <td width='70%'><font color="red">Codice Fiscale ed eventuale Partita Iva:</td>
-              <td><input name='cf' size='30%' type='text'></td>
+              <td><input name='cf' size='30%' type='text' required></td>
             </tr>
             <tr>
               <td width='70%'>indirizzo e-mail:</td>

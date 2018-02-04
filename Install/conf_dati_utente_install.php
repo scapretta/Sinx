@@ -57,25 +57,6 @@ function redirect($url,$tempo = FALSE ){
 } 
 
 //Controllo campi compilati
-		if ($nome == "")
- 		{
-   		echo "<center><b>Il campo nome &egrave obbligatorio</b></center>";
-   		redirect('./index.php' ,2);
-		break;
-		}
-		if ($livello == "")
- 		{
-   		echo "<center><b>Il campo livello &egrave obbligatorio</b></center>";
-   		redirect('./index.php' ,2);
-		break;
-		}
-		if ($passwd == "")
- 		{
-   		echo "<center><b>Il campo password &egrave obbligatorio</b></center>";
-   		redirect('./index.php' ,2);
-		break;
-		}
-
 	include ('../dati_db.inc');
 	$link=mysqli_connect("$host", "$username", "$password","$db_name")or die(mysqli_connect_error("Non posso connettermi al database"));
 
@@ -84,7 +65,7 @@ $tb_utenti = ('utenti(utente, nome, pswd)');
 
 		$sql="insert into $tb_utenti values('$nome', '$livello', MD5('$passwd'))"; //inserisco i valori nel database
 		$result=mysqli_query($link, $sql);
-		echo("Registrazione effettuata");
+		echo("Registrazione effettuata, redirect in corso..attendere...");
 		redirect('./Install2.php' ,2); //Vado alla pagina di conferma
 	}else{ 
 		header('location: ../errore.html'); //Vado alla pagina di errore

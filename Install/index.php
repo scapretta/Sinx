@@ -8840,12 +8840,12 @@ echo "Casella Blocco Note Pronta<br>";
           <tbody>
             <tr>
               <td width='150'><font color="red">Nome Utente *:</td>
-              <td><input value="Nome Utente" name='nomeut' size='30' type='text'></td>
+              <td><input value="Nome Utente" name='nomeut' size='30' type='text' required></td>
             </tr>
             <tr>
               <td width='150'><font color="red">Livello *:</td>
               <td><select name="livello" >
-   <option value="admin" selected="selected">Amministratore</option>
+   <option value="admin" selected="selected" required>Amministratore</option>
  <!--  <option value="admin">Amministratore</option>
  <option value="limitato">Utilizzatore limitato</option> -->
 </select>
@@ -8853,7 +8853,7 @@ echo "Casella Blocco Note Pronta<br>";
        </tr>
             <tr>
               <td width='150'><font color="red">Password *:</td>
-              <td><input type='password' name='passwd' size='30'></td>
+              <td><input type='password' name='passwd' size='30' required></td>
             </tr>
             <tr>
               <td colspan='2' align='center'>

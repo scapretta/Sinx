@@ -44,7 +44,7 @@ include('./top.inc');
 
 	    <tr>
 	      <td width='150'>Carica Immagine:<input type="hidden" name="MAX_FILE_SIZE" value="30000"> </td>
-	      <td> <input name="immagine" type="file" accept="image/*"><br><small><sub><i>Inserisci il logo dell'Associazione <b>massimo 30 kByte</b></small></i></sub></td>
+	      <td> <input name="immagine" type="file" accept="image/*" required><br><small><sub><i>Inserisci il logo dell'Associazione <b>massimo 30 kByte</b></small></i></sub></td>
 	      <td><small><sub><i>L'mmagine deve essere di tipo png; le dimensioni ottimali sono di 60px di altezza e non pu&ograve superare i 30Kb;<br><b>Dove verr&agrave nominata: "logo.png" in modo automatico</b><br>L'immagine risiede nella cartella 'Immagini' di Sinx</sub></small></td>
 	    </tr>
             <tr>

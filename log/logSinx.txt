@@ -1,0 +1,43 @@
+<br>
+------
+<br>04-02-18 16:13:02<br>
+Indirizzo IP: ::1<br>
+Provenienza connessione: http://localhost/sinx/index.php<br>
+Altre info: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36<br>
+Utente: admin<br>
+Livello Utente: admin<br>
+------
+<br>04-02-18 16:17:22<br>
+Indirizzo IP: ::1<br>
+Provenienza connessione: http://localhost/sinx/<br>
+Altre info: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36<br>
+Utente: admin<br>
+Livello Utente: admin<br>
+------
+<br>04-02-18 16:17:33<br>
+Indirizzo IP: ::1<br>
+Provenienza connessione: http://localhost/sinx/index2.php<br>
+Altre info: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36<br>
+Utente: admin<br>
+Livello Utente: admin<br>
+------
+<br>04-02-18 16:17:59<br>
+Indirizzo IP: ::1<br>
+Provenienza connessione: http://localhost/sinx/conferma.php?rif=InsUtente<br>
+Altre info: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36<br>
+Utente: admin<br>
+Livello Utente: admin<br>
+------
+<br>04-02-18 16:19:53<br>
+Indirizzo IP: ::1<br>
+Provenienza connessione: http://localhost/sinx/index.php<br>
+Altre info: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36<br>
+Utente: noadmin<br>
+Livello Utente: limitato<br>
+------
+<br>04-02-18 16:21:42<br>
+Indirizzo IP: ::1<br>
+Provenienza connessione: http://localhost/sinx/index2.php<br>
+Altre info: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36<br>
+Utente: noadmin<br>
+Livello Utente: limitato

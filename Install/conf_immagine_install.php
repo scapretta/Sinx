@@ -64,7 +64,7 @@ if ($ret = FALSE) {
 
 echo "Problemi nell'upload del file immagine" . $_FILES["immagine"]["name"];
 redirect('./Install2.php' ,2);
-break;
+return;
 }
 echo "Immagine caricata con successo";
 redirect('./Install3.php',2);

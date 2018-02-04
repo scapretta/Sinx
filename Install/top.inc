@@ -55,7 +55,8 @@ Sinx for Association - Gestionale per Associazioni no-profit
       <td style="width: 15%;"><a href=''><img style="border: 0px; width: 130px" src="../ImmTemplate/Nuovo_Logo_web.png"></td></a>
       <td style="width: 5px;"></td>
       <td style="text-align: center"><h2>Sinx</h2>
-      <sub><i><b><? echo $Lpresentazione ?></b></i></sub><br><br><small><?echo $Lutente ?><b><?php echo $nutente ?></b> - <? echo $Llivello ?><b><?php echo $user ?></b> - <? echo $Lora; echo (date("G:i"));?> - <?php echo $Ldata; echo (date("d-m-y"));?><br><? echo $Lversione; echo $versione; ?></td>
+      <?php include("../lang/ita/top.inc");?>
+      <sub><i><b><? echo $Lpresentazione; ?></b></i></sub><br><br><small><?echo $Lutente; ?><b></b> - <? echo $Llivello; ?><b></b> - <? echo $Lora; echo (date("G:i"));?> - <?php echo $Ldata; echo (date("d-m-y"));?><br><? echo $Lversione; ?></td>
 
 <!-- **** LOGOUT **** -->
 	<td align='center' width='15%'>
