@@ -16,9 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-        $host="localhost"; // Hostname
-        $username="root"; // Mysql username
+        $host=""; // Hostname
+        $username=""; // Mysql username
         $password=""; // Mysql password
-        $db_name="sinx"; //Nome del Database
+        $db_name=""; //Nome del Database
 
 ?>
