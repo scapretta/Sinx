@@ -55,7 +55,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 <center>
     <a href="./pre_stampa_soci.php"><img src="./ImmTemplate/Pulsanti/LibroSoci.png"></a>
     <a href="./Rubrica.php"><img src="./ImmTemplate/Pulsanti/Rubrica.png"></a>
-    <a href="./Manuale.php"><img src="./ImmTemplate/Pulsanti/Manuale2.png"></a>
+    <a href="./Manuale.php"><img src="./ImmTemplate/Pulsanti/Manuale.png"></a>
     <a href="./InsPrimanota.php"><img src="./ImmTemplate/Pulsanti/PrimaNota.png"></a>
     <a href="./InsRicFisc.php"><img src="./ImmTemplate/Pulsanti/Ricevuta.png"></a>
     <a href="./InsFattura.php"><img src="./ImmTemplate/Pulsanti/Fattura.png"></a>
