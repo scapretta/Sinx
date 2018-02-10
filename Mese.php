@@ -22,7 +22,7 @@ session_start();
 if ($user) {
 
 	include ('./dati_db.inc');
-	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
+	$connect = mysqli_connect("$host", "$username", "$password", "$db_name") or die("cannot connect DB");
 	
 function Calendar($m,$y, $connect)
 {

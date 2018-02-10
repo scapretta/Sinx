@@ -51,6 +51,10 @@ include($linguadaticom);
               <td><input name='nome' size='30' type='text' required='required'><br><small><sub><i><?php $Listrnome; ?></small></i></sub></td>
             </tr>
             <tr>
+              <td width='150'><?php echo $Lcognomedaticomuni; ?></td>
+              <td><input name='cognome' size='30' type='text'><br><small><sub><i><?php $Listrcognome; ?></small></i></sub></td>
+            </tr>
+            <tr>
               <td width='150'><?php echo $Lindirizzo; ?></td>
               <td><input name='indirizzo' size='30' type='text'><br><small><sub><i><?php echo $Listrindirizzo; ?></small></i></sub></td>
             </tr>

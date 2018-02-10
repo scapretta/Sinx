@@ -67,7 +67,7 @@ fwrite($var,$testo);
 fclose($var);
 
 include ('./dati_db.inc');
-$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
+$connect = mysqli_connect("$host", "$username", "$password", "$db_name") or die("cannot connect DB");
 $Query_nome = "SELECT * FROM tb_anagrafe_associaz";
 
 $rs=mysqli_query($connect, $Query_nome)

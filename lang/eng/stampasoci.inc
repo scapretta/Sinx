@@ -36,6 +36,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 $Ltitolosoci = "Shareholders";
 $Lid = "n.Card";
 $Lnome = "Name ";
+$Lcognome = "Surname ";
 $Lindirizzo = "Address ";
 $Lcitta = "City ";
 $Lprovincia = "Provincie";

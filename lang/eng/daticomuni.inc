@@ -35,7 +35,9 @@ Sinx for Association - Gestionale per Associazioni no-profit
 $Lpimmagine = "Image:";
 $Listrimmagine = "Insert image or foto of the Associate [max size 30 KByte]";
 $Lnomedaticomuni = "Name *:";
-$Listrnome = "Associate Name and Surname";
+$Lcognomedaticomuni = "Surname :";
+$Listrnome = "Associate Name";
+$Listrcognome = "Associate Surname";
 $Lindirizzo = "Address:";
 $Listrindirizzo = "Ex.: Street Rome, 122/B";
 $Lregione = "Region:";

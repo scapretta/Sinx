@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 /*======================================================================+
  File name   : index2.php
  Begin       : 2010-08-04
@@ -33,7 +35,6 @@ Sinx for Association - Gestionale per Associazioni no-profit
 =========================================================================+
 */
 
-  session_start();
 
 $user = $_SESSION['utente'];
 $nutente = $_SESSION['nome'];
@@ -108,7 +109,7 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
 		<? echo $Ldescrizionenote;?>
 	   </center>
 	   <br><b>
-		<? echo $row[dest];?>
+		<? echo $row['dest'];?>
 	   </b>
 	  </small>
 	 </td>

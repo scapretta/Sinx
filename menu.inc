@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*======================================================================+
  File name   : menu.inc
  Begin       : 2010-08-04
@@ -32,7 +33,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 =========================================================================+*/
-session_start();
+
 $user = $_SESSION['utente'];
 $langmenu = $_SESSION['lingua'];
 $paginamenu = "menu.inc";
@@ -90,14 +91,14 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
    <li class='has-sub'><a href='#'><span><? echo $Lassociazione; ?></span></a>
       <ul>
         <li><a href='./dati_Associaz.php' title="Per gestire l'Associazione"><span>A--- -<? echo $Ldatiassociazione; ?></span></a></li>
-         <li><a  target="_blank" href='<? echo $row[sito] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Lsito; ?></span></a></li>
-         <li><a  target="_blank" href='<? echo $row[webmail] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola - Web Mail</span></a></li>
-         <li><a  target="_blank" href='<? echo $row[webPEC] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola - Web PEC</span></a></li>
-         <li><a  target="_blank" href='<? echo $row[facebook] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Lfacebook; ?></span></a></li>
-         <li><a  target="_blank" href='<? echo $row[instagram] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Linstagram; ?></span></a></li>
-         <li><a  target="_blank" href='<? echo $row[youtube] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Lyoutube; ?></span></a></li>
-         <li><a  target="_blank" href='<? echo $row[twitter] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Ltwitter; ?></span></a></li>
-         <li><a  target="_blank" href='<? echo $row[HomeBanking] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $LHomeBanking; ?></span></a></li>
+         <li><a  target="_blank" href='<? echo $row['sito'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Lsito; ?></span></a></li>
+         <li><a  target="_blank" href='<? echo $row['webmail'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola - Web Mail</span></a></li>
+         <li><a  target="_blank" href='<? echo $row['webPEC'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola - Web PEC</span></a></li>
+         <li><a  target="_blank" href='<? echo $row['facebook'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Lfacebook; ?></span></a></li>
+         <li><a  target="_blank" href='<? echo $row['instagram'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Linstagram; ?></span></a></li>
+         <li><a  target="_blank" href='<? echo $row['youtube'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Lyoutube; ?></span></a></li>
+         <li><a  target="_blank" href='<? echo $row['twitter'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $Ltwitter; ?></span></a></li>
+         <li><a  target="_blank" href='<? echo $row['HomeBanking'] ?>' title="Apre il link in una nuova scheda del browser"><span>Aola -<? echo $LHomeBanking; ?></span></a></li>
          
       </ul>
    </li>

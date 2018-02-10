@@ -34,9 +34,10 @@ Sinx for Association - Gestionale per Associazioni no-profit
 
 //top
 $Ltitolosoci = "Libro soci";
-$Lid = "n.Tessera";
-$Lnome = "nome ";
-$Lindirizzo = "indirizzo ";
+$Lid = "N.Tessera";
+$Lnome = "Nome ";
+$Lcognome = "Cognome ";
+$Lindirizzo = "Indirizzo ";
 $Lcitta = "Citt&agrave ";
 $Lprovincia = "Provincia ";
 $Lcodfisc = "Cod Fisc ";

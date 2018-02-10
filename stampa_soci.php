@@ -49,6 +49,7 @@ echo <<<EOM
 	<tr>
 	<td width='5%'><small><b>$Lid</b></small></td>
 	<td width='10%'><small><b>$Lnome</b></small></td>
+	<td width='10%'><small><b>$Lcognome</b></small></td>
 	<td width='25%'><small><b>$Lindirizzo</b></small></td>
 	<td width='20%'><small><b>$Lcitta</b></small></td>
 	<td width='5%'><small><b>$Lprovincia</b></small></td>
@@ -68,6 +69,7 @@ echo <<<EOM
 	<tr>
 	<td><small><center>$row[ntessera]</center></small></td>
 	<td ><small>$row[nome]</small></td>
+	<td ><small>$row[cognome]</small></td>
 	<td ><small>$row[indirizzo]</small></td>
 	<td ><small>$row[cap] $row[citta]</small></td>
 	<td ><small>$row[provincia]</small></td>

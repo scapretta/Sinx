@@ -35,7 +35,9 @@ Sinx for Association - Gestionale per Associazioni no-profit
 $Lpimmagine = "Immagine:";
 $Listrimmagine = "Inserisci l'immagine o foto dell'Associato massimo 30 kByte";
 $Lnomedaticomuni = "Nome *:";
-$Listrnome = "Nome e Cognome del socio";
+$Lcognomedaticomuni = "Cognome :";
+$Listrnome = "Nome del socio";
+$Listrcognome = "Cognome del socio";
 $Lindirizzo = "Indirizzo:";
 $Listrindirizzo = "Es.: Via Roma, 122/B";
 $Lregione = "Regione:";
