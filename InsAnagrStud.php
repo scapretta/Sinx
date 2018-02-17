@@ -69,16 +69,17 @@ include('./menu.inc');
           <tbody>
           	    <tr>
                 <td width='150'><font color="red"><? echo $Lntessera; ?></td>
-              <td><input name='ntessera' size='5' type='text' required='required'>
+              <td><input name='ntessera' id="ntessera" size='5' type='text' required='required'>
                <br><small><sub><i><? echo $Listntessera; ?></small></i></sub></td>
             </tr>
-<?php include('./DatiComuni.inc'); ?>
+            
+            <?php include('./DatiComuni.inc'); ?>
 
 
             <tr>
               <td width='150'><font color="red"><? echo $Lfunzione; ?>*:</td>
-              <td><select name="classe" >
-   <option value="" selected="selected"><? echo $Lfunzione; ?></option>
+              <td><select name="classe" required>
+   <option value="" selected="selected" ><? echo $Lfunzione; ?></option>
 
 <?php
 $query = "SELECT classe FROM tb_classe";

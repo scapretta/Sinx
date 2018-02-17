@@ -59,19 +59,18 @@ if ($user == 'admin') {
 
 echo "<center>Il tuo utente ha un livello <b>$user</b> <br>Area permessa solo all'utente <b>Admin</b></center>";
 redirect('./index2.php',3);
-break;
+exit;
 }
 include('./top.inc');
 include('./menu.inc');
 
 	include ('./dati_db.inc');
-	mysql_connect("$host", "$username", "$password")or die("cannot connect");
-	mysql_select_db("$db_name")or die("cannot select DB");
+	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
 
 //Recupero l'ultimo id della tabella
 $Query = "SELECT MAX(id_ric) FROM tb_ricevute";
-$Qultimoid = mysql_query($Query);
-while($Tultimoid = mysql_fetch_array($Qultimoid)){
+$Qultimoid = mysqli_query($connect,$Query);
+while($Tultimoid = mysqli_fetch_array($Qultimoid)){
 $ultimoid= $Tultimoid['MAX(id_ric)'];
 }
 
@@ -107,10 +106,10 @@ $query = "SELECT id_ric
 	ORDER BY id_ric
 	LIMIT 1";
  
-$rs=mysql_query($query)
+$rs=mysqli_query($connect,$query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
-while ($row=mysql_fetch_row($rs))
+while ($row=mysqli_fetch_row($rs))
 {
 echo "<option>" .$row["0"]. "</option>";
 
@@ -152,10 +151,10 @@ $query = "SELECT id_ric
 	ORDER BY id_ric
 	LIMIT 1";
  
-$rs=mysql_query($query)
+$rs=mysqli_query($connect,$query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
-while ($row=mysql_fetch_row($rs))
+while ($row=mysqli_fetch_row($rs))
 {
 echo "<option>" .$row["0"]. "</option>";
 
@@ -175,10 +174,10 @@ $a++;
 <?php
 $query = "SELECT descrizione FROM tb_conto_economico";
  
-$rs=mysql_query($query)
+$rs=mysqli_query($connect,$query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
-while ($row=mysql_fetch_row($rs))
+while ($row=mysqli_fetch_row($rs))
 {
 echo "<option>" .$row["0"]. "</option>";
 
@@ -219,10 +218,10 @@ $query = "SELECT id_ric
 	ORDER BY id_ric
 	LIMIT 1";
  
-$rs=mysql_query($query)
+$rs=mysqli_query($connect,$query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
-while ($row=mysql_fetch_row($rs))
+while ($row=mysqli_fetch_row($rs))
 {
 echo "<option>" .$row["0"]. "</option>";
 
@@ -270,10 +269,10 @@ $a++;
 // popolo la tabella delle ricevute
 $Query = "SELECT * FROM tb_ricevute ORDER BY id_ric";
 
-$rs=mysql_query($Query)
-or die('' . mysql_error());
+$rs=mysqli_query($connect,$Query)
+or die('' . mysqli_error());
 
-while ($row=mysql_fetch_array($rs))
+while ($row=mysqli_fetch_array($rs))
 {
 echo <<<EOM
 	<tr>
@@ -289,7 +288,7 @@ EOM;
 echo <<<EOT
 </table><p></p>
 EOT;
-mysql_close();
+mysqli_close($connect);
 include('./menusx.inc');
 ?><hr><img src='./Immagini/suggerimento.png'><small><i><? echo $Lhelpric; ?>
 <hr></i></small><?

@@ -2,7 +2,7 @@
 /*======================================================================+
  File name   : DatiComini.inc
  Begin       : 2010-08-04
- Last Update : 2012-10-27
+ Last Update : 2018-02-16
 
  Description : Common data entry registries
 
@@ -61,68 +61,49 @@ include($linguadaticom);
 <tr>
               <td><?php echo $Lregione; ?></td>
 
-<td><select name="regioni" >
+<td>
+
+<select name="regioni" id="regioni">
    <option value="" selected="selected"><?php echo $Lscegli; ?></option>
 <?php
 $query = "SELECT nome_regione FROM regioni ORDER BY nome_regione";
  
-$rs=mysqli_query($connect,  $query)
-or die("<b>Errore:</b> Impossibile eseguire la query della Combo cap");
+$rs=mysqli_query($connect,  $query) or die("<b>Errore:</b> Impossibile eseguire la query regioni");
 
 while ($row = mysqli_fetch_row($rs))
-{
-echo "<option>" .$row["0"]. "</option>";
-
-}
+{echo "<option>" .$row["0"]. "</option>";}
 ?>
-  </select><br><small><sub><i><?php echo $Lsuggregione; ?></small></i></sub></td>
+  </select>
+  
+  <br><small><sub><i><?php echo $Lsuggregione; ?></small></i></sub></td>
   
 </tr>
 <tr>
-             <td><?php echo $Lprovincia; ?></td>
 
-<td><select name="provincie" >
-   <option value="" selected="selected"><?php $Lscegli; ?></option>
-<?php
-$query = "SELECT nome_provincia FROM province ORDER BY nome_provincia";
- 
-$rs=mysqli_query($connect,  $query)
-or die("<b>Errore:</b> Impossibile eseguire la query della Combo cap");
-
-while ($row=mysqli_fetch_row($rs))
-{
-echo "<option>" .$row["0"]. "</option>";
-
-}
-?>
-  </select><br><small><sub><i><?php echo $Lsuggprovincia; ?></small></i></sub></td>
+<td><?php echo $Lprovincia; ?></td>
+<td>
+  <select name="provincie" id="provincie" disabled>
+      <option value=""><?php echo $Lscegli; ?></option>
+  </select><br><small><sub><i><?php echo $Lsuggprovincia; ?></small></i></sub>
+</td>
   </tr>
 <tr>
-             <td><?php echo $Lcomune; ?></td>
 
-<td><select name="comuni" >
-   <option value="" selected="selected"><?php echo $Lscegli; ?></option>
-<?php
-$query = "SELECT cap, comune FROM comuni ORDER BY comune ASC";
- 
-$rs=mysqli_query($connect,  $query)
-or die("<b>Errore:</b> Impossibile eseguire la query della Combo cap");
+<td><?php echo $Lcomune; ?></td>
+  <td>
+    <select name="comuni" id="comuni" disabled>
+        <option value=""><?php echo $Lscegli; ?></option>
+    </select><br><small><sub><i><?php echo $Lsuggcitta; ?></small></i></sub>
+  </td>
+</tr>
 
-while ($row=mysqli_fetch_row($rs))
-{
-echo "<option>" .$row["0"], " - ", $row["1"]. "</option>";
-
-}
-?>
-  </select><br><small><sub><i><?php echo $Lsuggcitta; ?></small></i></sub></td>
-  </tr>
             <tr>
               <td width='150'><?php echo $Ltel; ?></td>
-              <td><input name='tel' size='30' type='tel' min='0' max='3499999999'><br><small><sub><i><?php echo $Listrtel; ?></small></i></sub></td>
+              <td><input name='tel' size='30' type='tel' pattern="[0-9]*" ><br><small><sub><i><?php echo $Listrtel; ?></small></i></sub></td>
             </tr>
             <tr>
               <td width='150'><?php echo $Lcell; ?></td>
-              <td><input name='tel2' size='30' type='tel' min='0' max='3499999999'><br><small><sub><i><?php echo $Listrtel; ?></small></i></sub></td>
+              <td><input name='tel2' size='30' type='tel' pattern="[0-9]*"><br><small><sub><i><?php echo $Listrtel; ?></small></i></sub></td>
             </tr>
             <tr>
               <td width='150'>e-mail:</td>
@@ -130,14 +111,15 @@ echo "<option>" .$row["0"], " - ", $row["1"]. "</option>";
             </tr>
             <tr>
               <td width='150'><?php echo $Ldatanasc; ?></td>
-              <td><input name='datangg' size='2' type='number' min='1' max='31'> - 
-		  <input name='datanmm' size='2' type='number' min='1' max='12'> -
-		  <input name='datanaaaa' size='4' type='number' min='1900' max='2100'><br><small><sub><i><?php echo $Listrdatan; ?></small></i></sub>
-	      </td>
+              <td>
+                  <input name='datangg' size='2' type='number' min='1' max='31'> - 
+		              <input name='datanmm' size='2' type='number' min='1' max='12'> -
+		              <input name='datanaaaa' size='4' type='number' min='1900' max='2100'><br><small><sub><i><?php echo $Listrdatan; ?></small></i></sub>
+	            </td>
             </tr>
             <tr>
               <td width='150'><?php echo $Lcodfiscale; ?></td>
-              <td><input name='nomerif' size='30' type='text'></td>
+              <td><input name='nomerif' size='30' type='text' pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"></td>
             </tr>
             <tr>
               <td width='150'><?php echo $Lassociato; ?></td>
@@ -147,3 +129,68 @@ echo "<option>" .$row["0"], " - ", $row["1"]. "</option>";
 	      <td width='150'><?php echo $Lnote; ?></td>
 	      <td><textarea name="note" rows="5" cols="40"></textarea></td>
 	    </tr>
+
+<script type="text/javascript">
+function checkDoubleCardNumber(variable,post)
+{
+  $.ajax({
+      type: "POST",
+      url: "ajax_check_card_number.php",
+      data: variable+"="+post,
+      dataType: "html",
+      success: function(msg)
+      {
+        if(msg>0)
+        { 
+          alert("Attenzione numero tessera già presente! Questo è solo un consiglio e non pregiudica il funzionamento dell'applicativo.");
+        } 
+      },
+      error: function()
+      {
+        alert("Chiamata fallita, si prega di riprovare...");
+      }
+    });
+}
+$(document).ready(function() {
+  $('#ntessera').on('blur', function (e) { 
+    {checkDoubleCardNumber("numeroCarta",this.value);}
+    });
+  });
+//chiamata ajax per recuperare lista province o comuni
+function getEnteLocale(variable,post) {
+  $.ajax({
+      type: "POST",
+      url: "getEnteLocale.php",
+      data: variable+"="+post,
+      dataType: "html",
+      success: function(msg)
+      {
+        
+        if(variable=="regioni")
+        {$('#provincie').append('<option value="" selected="selected">'+'<?php echo $Lscegli; ?></option>'+msg);}
+        else {$('#comuni').append('<option value="" selected="selected">'+'<?php echo $Lscegli; ?></option>'+ msg);}
+      },
+      error: function()
+      {
+        alert("Chiamata fallita, si prega di riprovare...");
+      }
+    });
+}
+
+//al selezione sulla select regione
+$(document).ready(function() {
+  $('#regioni').on('change', function (e) {
+    getEnteLocale(this.name,this.value); //carico lista province
+    $('#provincie').prop("disabled", false); //abilito drop-down
+    $('#provincie').empty(); //pulisco drop-down
+    $('#comuni').empty();
+
+  });
+  //al selezione sulla select provincia
+  $('#provincie').on('change', function (e) {
+    getEnteLocale(this.name,this.value); //carico lista comuni
+    $('#comuni').prop("disabled", false); //abilito drop-down
+    $('#comuni').empty(); 
+  });
+});
+</script>

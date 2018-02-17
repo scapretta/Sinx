@@ -2,11 +2,11 @@
 /*======================================================================+
  File name   : conf_Ric_Fiscale.php
  Begin       : 2010-08-04
- Last Update : 2013-01-20
+ Last Update : 11-02-2018
 
  Description : Print, clear, modify and insert table of Ricevute/quietanze
 
- Author: Sergio Capretta
+ Author: Sergio Capretta & Marco Pedrazzi
 
  (c) Copyright:
                Sergio Capretta
@@ -61,7 +61,7 @@ if ($user == 'admin') {
 
 echo "<center>Il tuo utente ha un livello <b>$user</b> <br>Area permessa solo all'utente <b>Admin</b></center>";
 redirect('./index2.php',3);
-break;
+exit;
 }
 include('./top.inc');
 include('./menu.inc');

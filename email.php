@@ -45,7 +45,7 @@ $Query_nome = "SELECT email FROM tb_anagrafe_associaz";
 $rs=mysqli_query($connect, $Query_nome)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 $row=mysqli_fetch_array($rs);
-$mailer = $row[email]; 
+$mailer = $row['email']; 
 
 
 $destinatario = $_POST['destinatario'];

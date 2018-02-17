@@ -19,7 +19,7 @@ session_start();
 $user = $_SESSION['utente'];
 
 
-function modulo($limite)
+function modulo($limite=NULL)
 {
 $langmoduli = $_SESSION['lingua'];
 $paginamoduli = "moduli.inc";

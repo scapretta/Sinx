@@ -2,11 +2,11 @@
 /*======================================================================+
  File name   : InsFattura.php
  Begin       : 2010-08-04
- Last Update : 2011-04-08
+ Last Update : 11-02-2018
 
  Description : Compilation tax bills
 
- Author: Sergio Capretta
+ Author: Sergio Capretta & Marco Pedrazzi
 
  (c) Copyright:
                Sergio Capretta
@@ -61,7 +61,7 @@ if ($user == 'admin') {
 
 echo "<center>Il tuo utente ha un livello <b>$user</b> <br>Area permessa solo all'utente <b>Admin</b></center>";
 redirect('./index2.php',3);
-break;
+exit;
 }
 
 include('./top.inc');

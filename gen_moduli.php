@@ -47,14 +47,14 @@ $rss=mysqli_query($connect, $Query_nome)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 $riga=mysqli_fetch_array($rss);
 
-	$luogo = $riga[citta];
+	$luogo = $riga['citta'];
 	$modulo = $_POST['modulo'];
 	$presenti = $_POST['presenti'];
 	$ordine = $_POST['OrdineGiorno'];
 	$verbale = $_POST['Verbale'];
-	$indsede = $riga[indirizzo];
-	$associazione =$riga[nome];
-	$numsede = $riga[numero];
+	$indsede = $riga['indirizzo'];
+	$associazione =$riga['nome'];
+	$numsede = $riga['numero'];
 
 
 if ($modulo == 'ammissione')
@@ -186,5 +186,5 @@ echo "<b>$row[nome]</b>";
 } else {
 header('Location: ./CompModuli.php');
 }
-mysql_close();
+mysqli_close($connect);
 ?>

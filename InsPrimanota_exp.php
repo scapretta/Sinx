@@ -61,7 +61,7 @@ if ($user == 'admin') {
 
 echo "<center>Il tuo utente ha un livello <b>$user</b> <br>Area permessa solo all'utente <b>Admin</b></center>";
 redirect('./index2.php',3);
-break;
+exit;
 }
 
 include('./top.inc');

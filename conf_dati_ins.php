@@ -75,28 +75,7 @@ function redirect($url,$tempo = FALSE ){
   echo "<meta http-equiv=\"refresh\" content=\"" . $tempo . ";" . $url . "\">";
   }
 } 
-//Controllo campi compilati
-		if ($nome == "")
- 		{
-   		echo "<center><b>Il campo nome &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrIns.php' ,2);
-		// break;
-die ("");
-		}
-		if ($materia == "")
- 		{
-   		echo "<center><b>Il campo Tipo associato &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrIns.php' ,2);
-		// break;
-die ("");
-        }
-		if ($tessera == "")
- 		{
-   		echo "<center><b>Il numero tessera &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrIns.php' ,2);
-		//break;
-die ("");
-		}
+
 		
 // *** GESTIONE DELL'IMMAGINE ***
 $upload_dir = "./Immagini/Utenti";

@@ -105,7 +105,7 @@ $evento="";
 
 while ($row=mysqli_fetch_array($rs))
 {
-$evento=$row[str_data];
+$evento=$row['str_data'];
 }
 
       if($data == $oggi)

@@ -72,7 +72,7 @@ echo "<option>" .$row["0"]. "</option>";
 $a++;
 } while ($a <= $ultimoid);
 ?></select></td>
-		<td><input name="data" readonly="text" value="<?php echo $_GET[cod]; ?>"></td>
+		<td><input name="data" readonly="text" value="<?php echo $_GET['cod']; ?>"></td>
 	  </tr>
 	  <tr>
 	<td></td>

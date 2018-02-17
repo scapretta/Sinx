@@ -50,8 +50,8 @@ echo <<<EOM
 	<td width='5%'><small><b>$Lid</b></small></td>
 	<td width='10%'><small><b>$Lnome</b></small></td>
 	<td width='10%'><small><b>$Lcognome</b></small></td>
-	<td width='25%'><small><b>$Lindirizzo</b></small></td>
-	<td width='20%'><small><b>$Lcitta</b></small></td>
+	<td width='10%'><small><b>$Lindirizzo</b></small></td>
+	<td width='15%'><small><b>$Lcitta</b></small></td>
 	<td width='5%'><small><b>$Lprovincia</b></small></td>
 	<td width='10%'><small><b>$Lcodfisc</b></small></td>
 	<td width='5%'><small><b>$Ltipo</b></small></td>

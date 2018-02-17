@@ -60,13 +60,13 @@ include('./menu.inc');
           <tbody>
             <tr>
                 <td width='150'><font color="red"><? echo $Lntessera; ?></td>
-              <td><input name='ntessera' size='5' type='text' required='required'>
+              <td><input name='ntessera' id="ntessera" size='5' type='text' required='required'>
                <br><small><sub><i><? echo $Listntessera; ?></small></i></sub></td>
             </tr>
 <?php include('./DatiComuni.inc'); ?>
             <tr>
               <td width='150'><?php echo $Lmansione; ?></td>
-              <td><input name='mansione' size='30' type='text' background='#D9D9D9'></td>
+              <td><input name='mansione' size='30' type='text' background='#D9D9D9' required></td>
             </tr>
             <tr>
               <td colspan='2' align='center'>

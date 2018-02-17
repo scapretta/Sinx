@@ -36,6 +36,13 @@ Sinx for Association - Gestionale per Associazioni no-profit
 $Lassociazione = "Association";
 $Lsito = " Web site";
 $Ldatiassociazione = " Data Association";
+$Lmail="Web Mail";
+$Lmailpec="Web Mail Pec";
+$Lfacebook="Facebook";
+$Linstagram="Instagram";
+$Lyoutube="YouTube";
+$Ltwitter="Twitter";
+$LHomeBanking="Home Banking";
 $Lanagrafica = " Registry";
 $Lfondatori = " Charges Amminstr";
 $Lassociati = " Associates";

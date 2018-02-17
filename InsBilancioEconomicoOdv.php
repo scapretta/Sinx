@@ -59,7 +59,7 @@ or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 while ($row=mysqli_fetch_array($rs))
 {
 
-$Quota[$a] = $row[valore];
+$Quota[$a] = $row['valore'];
 $a++;
 
 }

@@ -53,13 +53,13 @@ include('./menu.inc');
           <tbody>
             <tr>
                 <td width='150'><font color="red"><? echo $Lntessera; ?></td>
-              <td><input name='ntessera' size='5' type='text' required='required'>
+              <td><input name='ntessera' id="ntessera" size='5' type='text' required='required'>
                <br><small><sub><i><? echo $Listntessera; ?></small></i></sub></td>
             </tr>
 <?php include('./DatiComuni.inc'); ?>
             <tr>
               <td width='150'><font color="red"><?echo $Ltipoassociato; ?> *:</td>
-              <td><select name="materia" >
+              <td><select name="materia" required>
    <option value="" selected="selected"><? echo $Ltipoassociato; ?> </option>
 
 <?php
@@ -73,7 +73,7 @@ while ($row=mysqli_fetch_row($rs))
 echo "<option>" .$row["0"]. "</option>";
 
 }
-mysqli_close();
+mysqli_close($connect);
 ?>
 
   </select></td>

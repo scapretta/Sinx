@@ -96,7 +96,7 @@ if (isset($_POST['submit']) && $_POST['submit']=="invia")
     redirect('./conferma.php?rif=Calendario2' ,0);
   }
 }else{
-$string = $_GET[cod];
+$string = $_GET['cod'];
   ?>
 <tr>
   <td><font color="red"><b><?php echo $Ltitolocalendario ?> *:</b></td>

@@ -91,30 +91,6 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 
-//Controllo campi compilati
-		if ($nome == "")
- 		{
-   		echo "<center><b>Il campo nome &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrStud.php' ,2);
-		// break;
-die ("");
-		}
-		if ($classe == "")
- 		{
-   		echo "<center><b>Il campo Funzione &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrStud.php' ,2);
-		// break;
-die ("");
-        }
-		if ($tessera == "")
- 		{
-   		echo "<center><b>Il numero tessera &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrStud.php' ,2);
-		//break;
-die ("");
-		}
-		
-
 // *** GESTIONE DELL'IMMAGINE ***
 $upload_dir = "./Immagini/Utenti";
 if(@is_uploaded_file($_FILES["immagine"]["tmp_name"])) {
