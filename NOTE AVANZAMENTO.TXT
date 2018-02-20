@@ -56,5 +56,7 @@ update: Messaggio informativo in inserimento anagrafica: numero tessera duplicat
 Bug da risolvere (by Marco Pedrazzi):
 
 -- verificare bug nome colonna da git hub
+-- url errato chiamata ajax in dati comuni
+-- notificare prerequisiti tipo "short tag php ad on" e presenza db. 
 
 
