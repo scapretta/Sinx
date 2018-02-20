@@ -1,6 +1,6 @@
 <?php
 /*======================================================================+
- File name   : DatiComini.inc
+ File name   : DatiComuni.inc
  Begin       : 2010-08-04
  Last Update : 2018-02-16
 
