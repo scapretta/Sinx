@@ -51,12 +51,24 @@ fix: link menu associazione
 update: Campi in inserimento anagrafica: regione provincia comune ora sono mutualmente esculsivi con tecnica ajax
 update: Messaggio informativo in inserimento anagrafica: numero tessera duplicato con tecnica ajax 
 
+21-02-2018 - Sinx 0.99.6 by Marco Pedrazzi
+fix: Url errato chiamata ajax in dati comuni
+fix: Aggiornato README.MD grazie per la segnalazione https://github.com/mfvescovi
+fix: Tag versione
+fix: Testati e corretti alcuni errori "Warning".
+
+
 
 
 Bug da risolvere (by Marco Pedrazzi):
 
--- verificare bug nome colonna da git hub
--- url errato chiamata ajax in dati comuni
--- notificare prerequisiti tipo "short tag php ad on" e presenza db. 
+-- (chiedere all'autore - codice non commentato) Warning: sort() expects parameter 1 to be array, null given in D:\xampp\htdocs\Sinx\Files.php on line 69
+-- (chiedere all'autore - codice non commentato) Warning: Invalid argument supplied for foreach() in D:\xampp\htdocs\Sinx\Files.php on line 70
+-- (chiedere all'autore - codice non commentato) Deprecated: The each() function is deprecated. This message will be suppressed on further calls in D:\xampp\htdocs\Sinx\Files.php on line 120
+-- verificare bug nome colonna da git hub 
 
+Update da effettuare (by Marco Pedrazzi):
+
+-- agg modulo iscrizione minorenni http://sinx.forumattivo.com/t6-bug-installazione-xammp
+-- notificare prerequisiti tipo "short tag php ad on" e presenza db. 
 

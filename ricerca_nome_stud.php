@@ -27,7 +27,7 @@ if ($user) {
 include('./top.inc');
 include('./menu.inc');
 $iniz = $_POST['iniziale'];
-$tipologia = $_GET[tipologia];
+$tipologia = $_GET['tipologia'];
 
 	include ('./dati_db.inc');
 	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");

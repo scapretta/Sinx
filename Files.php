@@ -35,7 +35,6 @@ if ($handle_dir = opendir($base)) # Apre la directory, e verifica che il percors
 {
     echo "<UL class=\"testo\">\n"; 
   while (false!==($dir = readdir($handle_dir))) # Legge una voce finchè non è finita la directory, e la memorizza in $dir
-
   {
     if ($dir!="." && $dir!="..") #Evita di stampare "." e ".."
 
@@ -54,7 +53,7 @@ if ($handle_dir = opendir($base)) # Apre la directory, e verifica che il percors
         {
           #Codice nel caso di file
               if ($dir != "." && $dir != "..")
-        {
+            {
 
                    $lista[]=('<LI style="list-style-image: url(./ImmTemplate/doc.png)"><A href="' .$base . '/' . $dir . '">' . str_replace('_', ' ', substr($dir,0, strrpos($dir,"."))) . "</A></LI>\n");
               }

@@ -117,7 +117,7 @@ EOM;
 
 while ($riga=mysqli_fetch_array($ris))
 {
-$modpagamento=$riga[modpaga];
+$modpagamento=$riga['modpaga'];
 echo <<<EOM
 	<tr>
 	<td height='35px'><small>$riga[quantita]</small></td>

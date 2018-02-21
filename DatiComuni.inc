@@ -160,7 +160,7 @@ $(document).ready(function() {
 function getEnteLocale(variable,post) {
   $.ajax({
       type: "POST",
-      url: "getEnteLocale.php",
+      url: "ajax_get_ente_locale.php",
       data: variable+"="+post,
       dataType: "html",
       success: function(msg)

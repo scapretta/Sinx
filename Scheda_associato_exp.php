@@ -52,7 +52,7 @@ $associato = $_POST['associato'];
 $Query_nome = "SELECT * FROM tb_anagrafe WHERE id_anagrafe = $associato";
 
 $rs=mysqli_query($connect, $Query_nome)
-or die("Errore nella query $Query_nome: " . mysqli_error()); //die("<b>Errore:</b> Impossibile eseguire la query della Combo");
+or die("Errore nella query $Query_nome: " . mysqli_error($connect)); //die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 while ($row=mysqli_fetch_array($rs))
 {
 $idprec = $row['id_anagrafe'];

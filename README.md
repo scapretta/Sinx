@@ -1,6 +1,6 @@
 /*******************************************************
 
-	Sinx for Association V 0.93.4
+	Sinx for Association V 0.99.6
 	Gestionale per Associazioni senza scopo di lucro
 	http://www.sinx.it
 	
@@ -19,9 +19,20 @@ SITUAZIONE LEGALE
 REQUISITI
 --------------------------------------------------------
 	Apache
-	PHP 4.1+
+	PHP 7.0+ 			
+		- Estensione PHP: mysqli
+		- php.ini: short_open_tag=On
+		- php.ini: error_reporting=E_ALL  & ~E_NOTICE
 	MySql
 
+	or
+	
+	Xampp V.3.2.2
+		- Apache/2.4.29
+		- PHP 7.2.1
+			- Estensione PHP: mysqli
+			- php.ini riga n° 455 = error_reporting=E_ALL  & ~E_NOTICE
+			- php.ini riga n° 192 = short_open_tag=On
 
 ISTRUZIONI PER L'INSTALLAZIONE
 --------------------------------------------------------
