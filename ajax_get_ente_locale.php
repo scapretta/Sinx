@@ -71,7 +71,8 @@ function GetComuni($provincia,$connect)
   //se provincia non è null, recupera id della provincia e seleziona tutte i comuni della regione.
   if(isset($provincia))
   {
-    $queryIdProvincia="SELECT id_pro FROM province WHERE nome_provincia='$provincia'";
+    $fixed_provincia = mysqli_real_escape_string($connect, $provincia);
+    $queryIdProvincia="SELECT id_pro FROM province WHERE nome_provincia='$fixed_provincia'";
     $result=mysqli_query($connect,  $queryIdProvincia) or die("<b>Errore:</b> Impossibile eseguire la query id provincia");
     while ($row = mysqli_fetch_row($result))
     {
