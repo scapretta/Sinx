@@ -37,13 +37,16 @@ include('./top.inc');
 echo("<h2><center>Creo le tabelle</center></h2>");
 
 	include ('../dati_db.inc');
-	$link=mysqli_connect("$host", "$username", "$password","$db_name")or die(mysqli_connect_error("Non posso connettermi al database"));
+	$link = new mysqli("$host", "$username", "$password","$db_name") or die(mysqli_connect_error("Non posso connettermi al database"));
 	echo "Mi connetto al database...Connessione riuscita.<br><br>";
 
+	//$link=mysqli_connect("$host", "$username", "$password","$db_name")or die(mysqli_connect_error("Non posso connettermi al database"));
+	//echo "Mi connetto al database...Connessione riuscita.<br><br>";
 
 
 
-$link->query("CREATE TABLE tb_anagrafe_associaz (
+
+$sql = ("CREATE TABLE tb_anagrafe_associaz (
 id_anagrafe INT(9) NOT NULL auto_increment,
 nome VARCHAR(170) DEFAULT NULL,
 indirizzo VARCHAR(100) DEFAULT NULL,
@@ -72,25 +75,30 @@ PRIMARY KEY (id_anagrafe))");
 
 
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Anagrafe Associazione</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Anagrafe Associazione</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Anagrafe Associazione Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_classe (
+
+$sql = ("CREATE TABLE tb_classe (
 id_classe INT(9) NOT NULL auto_increment,
 classe VARCHAR(25),
 PRIMARY KEY (id_classe))");
 
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Funzioni Associati</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Classe</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Classe Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_anagrafe (
+$sql = ("CREATE TABLE tb_anagrafe (
 ntessera VARCHAR(60) NOT NULL,
 id_anagrafe INT(9) NOT NULL auto_increment,
 nome VARCHAR(150) DEFAULT NULL,
@@ -114,24 +122,28 @@ associato VARCHAR(2),
 PRIMARY KEY (id_anagrafe))");
 
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Anagrafe associati</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Anagrafiche</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Anagrafiche Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_materia (
+$sql = ("CREATE TABLE tb_materia (
 id_materia INT(9) NOT NULL auto_increment,
 materia VARCHAR(25),
 PRIMARY KEY (id_materia))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Tipo Associati</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Tipologia Associati</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Tipologia Associati Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_primanota (
+$sql = ("CREATE TABLE tb_primanota (
 id_primanota INT(9) NOT NULL auto_increment,
 id_ricevuta INT(9),
 id_fattura INT(9),
@@ -144,13 +156,15 @@ uscitab DECIMAL(8,2) DEFAULT NULL,
 data_registr VARCHAR(10) NOT NULL,
 PRIMARY KEY (id_primanota))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Primanota</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Prima Nota</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Prima Nota Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE utenti (
+$sql = ("CREATE TABLE utenti (
 id INT(11) NOT NULL AUTO_INCREMENT,
 nome VARCHAR(25) NOT NULL,
 pswd TEXT NOT NULL,
@@ -158,13 +172,15 @@ utente VARCHAR(25) NOT NULL,
 note TEXT NULL,
 PRIMARY KEY  (id))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Utenti</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Utenti</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Utenti Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_ricevute (
+$sql = ("CREATE TABLE tb_ricevute (
 id_ric INT(11) NOT NULL auto_increment,
 nome VARCHAR(150) NOT NULL,
 data VARCHAR(10) NOT NULL,
@@ -172,39 +188,45 @@ euro DECIMAL(8,2) DEFAULT NULL,
 descr VARCHAR(100) NOT NULL,
 PRIMARY KEY (id_ric))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Ricevute</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Ricevute</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Ricevute Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_email (
+$sql = ("CREATE TABLE tb_email (
 id_mail INT(11) NOT NULL auto_increment,
 data VARCHAR(10) NOT NULL,
 dest VARCHAR(25) NOT NULL,
 testo TEXT,
 PRIMARY KEY (id_mail))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Email</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>mail</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella mail Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_note (
+$sql = ("CREATE TABLE tb_note (
 id_note INT(11) NOT NULL auto_increment,
 data VARCHAR(50) NULL,
 dest VARCHAR(25) NOT NULL,
 testo TEXT,
 PRIMARY KEY (id_note))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Note</b> creata con successo<br>";
-    } else {
-    echo($link->error);
-}
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Note</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Note Creata!<br>"; 
+} 
 
-$link->query("CREATE TABLE tb_fatture (
+$sql = ("CREATE TABLE tb_fatture (
 id_fatt INT(11) NOT NULL,
 id_riga_art INT(11) NOT NULL auto_increment,
 nome VARCHAR(150) NOT NULL,
@@ -217,13 +239,15 @@ modpaga VARCHAR(500) NOT NULL,
 totale DECIMAL(8,2) DEFAULT NULL,
 PRIMARY KEY (id_riga_art))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Fatture</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Fatture</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Fatture Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE tb_tot_fatture (
+$sql = ("CREATE TABLE tb_tot_fatture (
 id INT(11) NOT NULL auto_increment,
 id_tot_fatture INT(11) NOT NULL,
 nome VARCHAR(150) NOT NULL,
@@ -231,26 +255,30 @@ data VARCHAR(10) NOT NULL,
 tot_fattura DECIMAL(8,2) DEFAULT NULL,
 PRIMARY KEY (id))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Totali Fatture</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Totale Fatture</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Totale Fatture Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE tb_conto_economico (
+$sql = ("CREATE TABLE tb_conto_economico (
 id INT(11) NOT NULL auto_increment,
 descrizione VARCHAR(255) NOT NULL,
 valore DECIMAL(8,2) NOT NULL,
 costoricavo VARCHAR(25) NOT NULL,
 PRIMARY KEY (ID))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Conto Economico</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Conto economico</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Conto economico Creata!<br>"; 
 }  
 
-$link->query("CREATE TABLE appuntamenti (
+$sql = ("CREATE TABLE appuntamenti (
   id int(11) NOT NULL auto_increment,
   titolo varchar(255) NOT NULL default '',
   testo text NOT NULL,
@@ -258,26 +286,30 @@ $link->query("CREATE TABLE appuntamenti (
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Appuntamenti</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Appuntamenti</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Appuntamenti Creata!<br>"; 
 }  
 
-$link->query("CREATE TABLE tb_stato_patrimoniale (
+$sql = ("CREATE TABLE tb_stato_patrimoniale (
 id INT(11) NOT NULL auto_increment,
 descrizione VARCHAR(125) NOT NULL,
 valore DECIMAL(8,2),
 costoricavo VARCHAR(25) NOT NULL,
 PRIMARY KEY (ID))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Stato Patrimoniale</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Stato Patrimoniale</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Stato Patrimoniale Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE `comuni` (
+$sql = ("CREATE TABLE `comuni` (
   `id_com` int(6) unsigned NOT NULL auto_increment,
   `id_pro` int(4) unsigned NOT NULL,
   `cap` int(8) unsigned NOT NULL,
@@ -285,38 +317,44 @@ $link->query("CREATE TABLE `comuni` (
   PRIMARY KEY  (`id_com`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8101");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Comuni</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Comuni</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Comuni Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE `regioni` (
+$sql = ("CREATE TABLE `regioni` (
   `id_reg` int(3) unsigned NOT NULL auto_increment,
   `nome_regione` varchar(200) character set latin1 NOT NULL,
   PRIMARY KEY  (`id_reg`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Regioni</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Regioni</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Regioni Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE `province` (
+$sql = ("CREATE TABLE `province` (
   `id_pro` int(4) unsigned NOT NULL auto_increment,
   `id_reg` int(3) unsigned NOT NULL,
   `nome_provincia` varchar(200) character set latin1 NOT NULL,
   PRIMARY KEY  (`id_pro`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=111");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Province</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Province</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Province Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE tb_progetto (
+$sql = ("CREATE TABLE tb_progetto (
 id_progetto INT(11) NOT NULL,
 id_riga_art INT(11) NOT NULL auto_increment,
 nome VARCHAR(25) NOT NULL,
@@ -328,13 +366,15 @@ descr VARCHAR(25) NOT NULL,
 totale DECIMAL(8,2) DEFAULT NULL,
 PRIMARY KEY (id_riga_art))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Progetti</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Progetto</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Progetto Creata!<br>"; 
 } 
 
-$link->query("CREATE TABLE tb_tot_progetto (
+$sql = ("CREATE TABLE tb_tot_progetto (
 id INT(11) NOT NULL auto_increment,
 nome VARCHAR(25) NOT NULL,
 data VARCHAR(10) NOT NULL,
@@ -342,10 +382,12 @@ descrizione TEXT,
 tot_progetto DECIMAL(8,2) DEFAULT NULL,
 PRIMARY KEY (id))");
 // Esecuzione della query e controllo degli eventuali errori
-if ($link->query($link)) {
-    echo "Tabella <b>Totali Progetti</b> creata con successo<br>";
-    } else {
-    echo($link->error);
+$result = mysqli_query($link, $sql); 
+// Verifico se la tabella è stata creata oppure no oppure già esiste
+if (!$result) { 
+echo "Impossibile creare la tabella <b>Progetto totale</b> oppure la tabella gi&agrave esiste<br>"; 
+} else { 
+echo "Tabella Progetto totale Creata!<br>"; 
 } 
 
 
