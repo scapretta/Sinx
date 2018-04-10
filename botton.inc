@@ -39,12 +39,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
       <td style="height: 5px; width: 15%;" bgcolor="#c7c7c7"></td>
 
     </tr>
-    <tr>
-      <td style="height: 5px;" bgcolor="#6d931c"></td>
-      <td style="height: 5px;" bgcolor="#6d931c"></td>
-      <td style="height: 5px;" bgcolor="#6d931c"></td>
-      <td style="height: 5px;" bgcolor="#6d931c"></td>
-    </tr>
+
 	</td>
     </tr>
 
@@ -52,6 +47,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 </table>
 
 <!-- Tasti scelta rapida -->
+<table class='bottom' cellpadding="0" cellspacing="0"><tr><td>
 <center>
     <a href="./pre_stampa_soci.php"><img src="./ImmTemplate/Pulsanti/LibroSoci.png"></a>
     <a href="./Rubrica.php"><img src="./ImmTemplate/Pulsanti/Rubrica.png"></a>
@@ -64,7 +60,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 </center>
 
 <!-- Copyright -->
-<small><center><font color="#a1a1a1"><i>
+<small><center>
 <blockquote>Sinx for Association Copyright (C) 2011-2018  by Sergio Capretta
 
 <div class="p"><!----></div>
@@ -72,12 +68,13 @@ Sinx for Association - Gestionale per Associazioni no-profit
 <tt><a target='_blank' href="http://www.gnu.org/licenses/gpl-3.0.html">show</a></tt>.
   This is free software, and you are welcome to redistribute it
   under certain conditions; type <tt><a target='_blank' href="http://www.gnu.org/licenses/gpl-3.0.html">show</a></tt> for details.
-</blockquote></i></center></small>
+</blockquote></center></small>
 
 <!-- Savannah -->
-<p><center><img src='./ImmTemplate/floating_mini_sx.png'><small><i>Sinx is officially registered on <a target='_blank' href='http://savannah.nongnu.org/'>Savannah</a> as free software</i></small><img src='./ImmTemplate/floating_mini.png'></center></p>
+<p><center><img src='./ImmTemplate/floating_mini_sx.png'><small>Sinx is officially registered on <a target='_blank' href='http://savannah.nongnu.org/'>Savannah</a> as free software</small><img src='./ImmTemplate/floating_mini.png'></center></p>
 
 <!-- Pulsante fsf member -->
 <center><a href="http://www.fsf.org"><img src="./Immagini/646150.png" alt="[FSF Associate Member]" /></a></center>
+</td></tr></table>
 </body>
 </html>
