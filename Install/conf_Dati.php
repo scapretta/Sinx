@@ -35,7 +35,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 	include ('../dati_db.inc');
 	$link=mysqli_connect("$host", "$username", "$password","$db_name")or die(mysqli_connect_error("Non posso connettermi al database"));
 
-	$nome = $_POST['nome'];
+	$nnome = $_POST['nome'];
 	$indirizzo = $_POST['indirizzo'];
 	$numero = $_POST['numero'];
 	$cap = $_POST['cap'];
@@ -47,6 +47,8 @@ Sinx for Association - Gestionale per Associazioni no-profit
 	$email = $_POST['email'];
 	$webmail = $_POST['webmail'];
 	$sito = $_POST['sito'];
+	
+	$nome= preg_replace("/\W/", "", $nnome);
 	
 $provenienza = $_SERVER['HTTP_REFERER'];
 $data = date("d-m-y"); $ora = date("G:i:s");
