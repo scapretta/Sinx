@@ -66,7 +66,7 @@ echo <<<EOM
 		<input type="submit" name="associato" value="$row[id_anagrafe]">
 		</form></small></td>
         <td ><small>$row[ntessera]</small></td>
-	<td ><small>$row[nome]</small></td>
+	<td ><small>$row[nome] $row[cognome]</small></td>
 	<td ><small>$row[indirizzo]</small></td>
 	<td ><small>$row[cap] $row[citta]</small></td>
 	<td ><small>$row[provincia]</small></td>

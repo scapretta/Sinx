@@ -64,13 +64,6 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
 	<td align='center' width='15%'></td>
     </tr>
 
-
-    <tr>
-      <td style="height: 5px; width: 15%;" bgcolor="#6d931c"></td>
-      <td style="height: 5px; width: 5px;" bgcolor="#6d931c"></td>
-      <td style="height: 5px;" bgcolor="#6d931c"></td>
-      <td style="height: 5px; width: 15%;" bgcolor="#6d931c"></td>
-    </tr>
     <tr>
       <td style="height: 5px;" bgcolor="#c7c7c7"></td>
       <td style="height: 5px;" bgcolor="#c7c7c7"></td>
@@ -83,7 +76,7 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
       <td style="vertical-align: top; " bgcolor="#e8e8e8"><span style="font-weight: bold;">Menu<br>
       <br>
 
-	      <hr style="width: 100%; height: 2px;">
+	      <hr style="width: 100%;  ">
       </span>
 
 <div id='cssmenu'>

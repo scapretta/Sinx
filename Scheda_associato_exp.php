@@ -96,7 +96,7 @@ while ($row=mysqli_fetch_array($rs))
 {
 echo <<<EOM
 
-<h3><center>$row[nome]</h3></center>
+<h3><center>$row[nome] $row[cognome]</h3></center>
 <table align='center' border='0' cellpadding='0' cellspacing='2' width='90%'>
 	<tr>
 	  <td>

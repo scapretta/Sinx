@@ -94,14 +94,14 @@ $row=mysqli_fetch_array($rs);
     <tr>
       <td style="width: 15%;"><a href='./index2.php'><img style="border: 0px; width: 130px" src="./ImmTemplate/Nuovo_Logo_web.png"></td></a>
       <td style="width: 5px;"></td>
-      <td style="text-align: center"><h2>Sinx</h2><h3><?php echo $Lpresentazione ?></h3><sub><i><b><?php echo $row['nome'] ?></b> - <? echo $row['indirizzo'] ?>, <? echo $row['numero'] ?> - <? echo $row['cap'] ?> <? echo $row['citta'] ?> - <? echo $row['provincia'] ?></b></sub>
-      <sub><br><br><small><?echo $Lutente ?><b><?php echo $nutente ?></b> - <?php echo $Llivello ?><b><?php echo $user ?></b> - <?php echo $Lora; echo (date("G:i"));?> - <?php echo $Ldata; echo (date("d-m-y"));?></td>
+      <td style="text-align: center"><h2 style="color: #ffffff;">Sinx - <?php echo $Lpresentazione ?></h2><sub><?php echo $row['nome'] ?> - <? echo $row['indirizzo'] ?>, <? echo $row['numero'] ?> - <? echo $row['cap'] ?> <? echo $row['citta'] ?> - <? echo $row['provincia'] ?></sub>
+      <sub><br><br><small><?echo $Lutente ?><?php echo $nutente ?> - <?php echo $Llivello ?><?php echo $user ?> - <?php echo $Lora; echo (date("G:i"));?> - <?php echo $Ldata; echo (date("d-m-y"));?></td>
 
 <!-- **** LOGOUT **** -->
 	<td align='center' width='15%'>
 <!-- <img align="middle" src="./ImmTemplate/logout.png">&nbsp;<a href='./Backup_database.php'><font color="black"><b>Bakup db</b></a><br> -->
 <a class="transp" href='./logout.php'><img src="./ImmTemplate/Pulsanti/Out.png" title="Uscita dal Programma" ></img></a><SMALL>
-      <br><center><i><font color="black">www.sinx.it - info@sinx.it</i></center><br><small><?php echo $Lversione; echo $versione; ?></small></td>
+      <br><center>www.sinx.it - info@sinx.it</center><br><small><?php echo $Lversione; echo $versione; ?></small></td>
     </tr>
 </div>
 </table>
