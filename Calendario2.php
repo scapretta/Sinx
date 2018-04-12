@@ -280,7 +280,7 @@ EOT;
 }
 
 // CALENDARIO GOOGLE
-include ('./calgoogle.inc');
+?><center><? include ('./calgoogle.inc');?></center><?
 
 
 mysqli_close($connect);

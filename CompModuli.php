@@ -116,7 +116,7 @@ echo "<option>" .$row["0"]. "</option>";
 <table align='center' border='0' width='60%'>
 <tr>
 	<!--<td height=50%; align='center'><a href="./Files.php">Directory Moduli e Files</td>-->
-<td height=50%; align='center'><a class="transp" href="./Files.php"><img src="./ImmTemplate/Pulsanti/Files.png" title="Caricamento files e immagini" ></img></a></td>
+<td height=50%; align='center'><a class="transp" href="./Files.php"><i class="material-icons">assignment_turned_in</i></a></td>
 
 </tr>
           </tbody>

@@ -83,7 +83,7 @@ $row=mysqli_fetch_array($rs);
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type='text/javascript' src='./menu_assets/menu_jquery.js'></script>
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
@@ -100,7 +100,7 @@ $row=mysqli_fetch_array($rs);
 <!-- **** LOGOUT **** -->
 	<td align='center' width='15%'>
 <!-- <img align="middle" src="./ImmTemplate/logout.png">&nbsp;<a href='./Backup_database.php'><font color="black"><b>Bakup db</b></a><br> -->
-<a class="transp" href='./logout.php'><img src="./ImmTemplate/Pulsanti/Out.png" title="Uscita dal Programma" ></img></a><SMALL>
+<a class="transp" href='./logout.php'><i class="material-icons">exit_to_app</i></a><SMALL>
       <br><center>www.sinx.it - info@sinx.it</center><br><small><?php echo $Lversione; echo $versione; ?></small></td>
     </tr>
 </div>
