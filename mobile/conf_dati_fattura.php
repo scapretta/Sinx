@@ -102,11 +102,11 @@ die ("");
 
 //Inserisco i dati nella tabella dei record della singola fattura
 $totfattura = $quantita * ($prezzoun + ($prezzoun * ( $iva / 100)));
-$tb_fattura = ('tb_fatture(id_fatt, nome, data, euro, quantita, descr, iva, totale)');
+$tb_fattura = ('tb_fatture(id_fatt, nome, data, euro, quantita, descr, iva, modpaga, totale)');
 $tb_tot_fattura = ('tb_tot_fatture(id_tot_fatture, tot_fattura, nome, data)');
 
 	if ($totfattura){ 
-		$sql="insert into $tb_fattura values('$numfattura', '$nome', '$data', '$prezzoun', '$quantita', '$descrizione', '$iva', '$totfattura')";
+		$sql="insert into $tb_fattura values('$numfattura', '$nome', '$data', '$prezzoun', '$quantita', '$descrizione', '$iva', '', '$totfattura')";
 		$result=mysqli_query($connect, $sql) or die (mysqli_error());
 
 //Aggiorno i totali della singola fattura

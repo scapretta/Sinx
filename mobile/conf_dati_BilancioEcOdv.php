@@ -165,7 +165,7 @@ echo <<<html
 		  <td size='10%'>Importi parziali</td>
 		    <td size='10%'>Importi totali</td>
             </tr>
-	    <tr bgcolor='orange'>
+	    <tr bgcolor='green'>
 	      <td><h3>Ricavi<h3></td>
 		<td></td>
 		<td></td>
@@ -192,13 +192,13 @@ echo <<<html
         </tr>
             <tr>
               <td></td>
-		<td><small>2.1 da soci $nTitolo21</small></td>
+		<td><small>2.1 da soci <b>$nTitolo21</b></small></td>
 		  <td>$nValore21</td>
 	<td></td>
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.2 da non soci $nTitolo22</small></td>
+		<td><small>2.2 da non soci <b>$nTitolo22</b></small></td>
 		  <td>$nValore22</td>
 	<td></td>	    
 	    </tr>
@@ -210,7 +210,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.4 da enti pubblici $nTitolo24</small></td>
+		<td><small>2.4 da enti pubblici <b>$nTitolo24</b></small></td>
 		  <td>$nValore24</td>
 	<td></td>
 	    </tr>
@@ -222,7 +222,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.6 da alter Odv $nTitolo26</small></td>
+		<td><small>2.6 da alter Odv <b>$nTitolo26</b></small></td>
 		  <td>$nValore26</td>
 	<td></td>
 	    </tr>
@@ -234,7 +234,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>2.8 altro $nTitolo28</small></td>
+		<td><small>2.8 altro <b>$nTitolo28</b></small></td>
 		  <td>$nValore28</td>
 	<td></td>
 	    </tr>
@@ -322,7 +322,7 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>6.3 altro: $nTitolo63</small></td>
+		<td><small>6.3 altro: <b>$nTitolo63</b></small></td>
 		  <td>$nValore63</td>
 	    </tr>
         <tr>
@@ -344,7 +344,7 @@ echo <<<html
 	<td><b>$totaleric</b></td>
 
 
-	    <tr bgcolor='orange'>
+	    <tr bgcolor='red'>
 	      <td><h3>Costi<h3></td>
 	<td></td>
 	<td></td>
@@ -477,17 +477,17 @@ echo <<<html
 	    </tr>
            <tr>
               <td></td>
-		<td><small>12.2 Quote associative a odv collegate $nTitolo122</small></td>
+		<td><small>12.2 Quote associative a odv collegate <b>$nTitolo122</b></small></td>
 		  <td>$nValoreC122</td>
 	    </tr>
            <tr>
               <td></td>
-		<td><small>12.3 versate ad altre odv $nTitolo123</small></td>
+		<td><small>12.3 versate ad altre odv <b>$nTitolo123</b></small></td>
 		  <td>$nValoreC123</td>
 	    </tr>
            <tr>
               <td></td>
-		<td><small>12.4 altro $nTitolo124</small></td>
+		<td><small>12.4 altro <b>$nTitolo124</b></small></td>
 		  <td>$nValoreC124</td>
 	    </tr>
         <tr>

@@ -17,8 +17,8 @@
 */
 
         $host="localhost"; // Hostname
-        $username=""; // Mysql username
-        $password=""; // Mysql password
-        $db_name=""; //Nome del Database
+        $username="valdotv"; // Mysql username
+        $password="ValdoTv_01"; // Mysql password
+        $db_name="gestionale_valdotv"; //Nome del Database
 
 ?>

@@ -51,8 +51,9 @@ if ($user) {
 	$ndatanaaaa = $_POST['datanaaaa'];
 	$classe = $_POST['classe'];
 	$nnomerif = $_POST['nomerif'];
-	$semail = $_POST['email'];
+	$email = $_POST['email'];
 	$nnote = $_POST['note'];
+	
 
 $ndatan = ($ndatangg."-".$ndatanmm."-".$ndatanaaaa);
 
@@ -90,29 +91,6 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 
-//Controllo campi compilati
-		if ($nome == "")
- 		{
-   		echo "<center><b>Il campo nome &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrStud.php' ,2);
-		// break;
-die ("");
-		}
-		if ($classe == "")
- 		{
-   		echo "<center><b>Il campo Funzione &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrStud.php' ,2);
-		// break;
-die ("");
-		if ($tessera == "")
- 		{
-   		echo "<center><b>Il numero tessera &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrStud.php' ,2);
-		//break;
-die ("");
-		}
-		
-
 // *** GESTIONE DELL'IMMAGINE ***
 $upload_dir = "./Immagini/Utenti";
 if(@is_uploaded_file($_FILES["immagine"]["tmp_name"])) {
@@ -131,9 +109,9 @@ $file_name = "personal.gif";
 	include ('./dati_db.inc');
 	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
 
-$tb_anagrafe = ('tb_anagrafe(nome, cognome, indirizzo, cap, citta, provincia, tel, tel2, datan, classe, nomerif, email, tipologia, note, immagine, associato)');
+$tb_anagrafe = ('tb_anagrafe(ntessera, nome, cognome, indirizzo, cap, citta, provincia, tel, tel2, datan, classe, nomerif, materia, mansione, email, tipologia, note, immagine, associato)');
 	if ($nome){ 
-		$sql="insert into $tb_anagrafe values('$nome', '$cognome', '$indirizzo', '$cap', '$citta', '$provincia', '$tel', '$tel2', '$datan', '$classe', '$nomerif', '$email', 'Stud', '$note', '$file_name', '$associato')"; //inserisco i valori nel database
+		$sql="insert into $tb_anagrafe values('$tessera','$nome', '$cognome', '$indirizzo', '$cap', '$citta', '$provincia', '$tel', '$tel2', '$datan', '$classe', '$nomerif', '', '', '$email', 'Stud', '$note', '$file_name', '$associato')"; //inserisco i valori nel database
 		$result=mysqli_query($connect, $sql);
 		header('location: ./conferma.php?rif=InsAnagrStud'); //Vado alla pagina di conferma
 	}else{ 
@@ -141,6 +119,5 @@ $tb_anagrafe = ('tb_anagrafe(nome, cognome, indirizzo, cap, citta, provincia, te
 		}
 mysqli_close($connect);
 } else {
-header('Location: ./index.php');
-}
-?>
+header("Location: ./index.php");
+} ?>

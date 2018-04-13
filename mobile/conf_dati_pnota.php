@@ -86,7 +86,6 @@ function redirect($url,$tempo = FALSE ){
  		{
    		echo "<center><b>Il campo Operazione &egrave obbligatorio</b></center>";
    		redirect('./InsPrimanota.php' ,2);
-		break;
 		}
 
 

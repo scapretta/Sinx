@@ -39,17 +39,17 @@ Sinx for Association - Gestionale per Associazioni no-profit
 <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<body>
+<body >
 	<title>Login - Sinx</title>
 </head>
 
 <body>
-
 <form action="./Conf_Login.php" method="post">
+
 <table class='bordo' cellpadding="0" cellspacing="0" align="center" width="30%" >
 <center><b><br><br>Benvenuto in Sinx, Gestionale per Associazioni No-Profit</b></center><br>
 <hr style="width: 50%; height: 2px"><br><br><body bgcolor="#FFFFFF">
-<tr style="background-image:url(./ImmTemplate/Sfondo_banner_rid.jpg)">
+<tr style="background-image:url(./ImmTemplate/Sfondo_banner_rid.jpg);">
   <td >
     <center><img src='./ImmTemplate/login.png'></center>
   </td>
@@ -74,15 +74,16 @@ Sinx for Association - Gestionale per Associazioni no-profit
 					<input class="submit" name="submit" type="submit" value="<- Login ->" />
 </td>
 </tr>
-    <tr bgcolor="#efefef"><td><center><i><small><sub><input name="versione" size='5%' readonly="text" value=" 0.98.8"></sub></small></i></center></td>
+    <tr bgcolor="#efefef"><td><center><i><small><sub><input name="versione" size='5%' readonly="text" value=" 1.0"></sub></small></i></center></td>
     <td><center><i><small><sub>www.sinx.it -- info@sinx.it</sub></small></i></center><br></td></tr>
 <!-- SCELTA LINGUAGGIO -->
 
 </table>			
 </form>
+
 <br>
 <hr style="width: 60%; height: 2px">
 
 <?php
-include('./botton.inc');
+include('./botton2.inc');
 ?>

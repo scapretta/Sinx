@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 /*======================================================================+
  File name   : index2.php
  Begin       : 2010-08-04
@@ -33,22 +35,24 @@ Sinx for Association - Gestionale per Associazioni no-profit
 =========================================================================+
 */
 
-  session_start();
 
 $user = $_SESSION['utente'];
+$nutente = $_SESSION['nome'];
 $langu = $_SESSION['lingua'];
 $paginaindex2 = "index2.inc";
 $linguaindex2 = ($langu.$paginaindex2);
 include($linguaindex2);
 
 if ($user) {
+include('./top.inc');
+include('./menu.inc');
 
 	include ('./dati_db.inc');
 	$link=mysqli_connect("$host", "$username", "$password","$db_name")or die(mysqli_connect_error("Non posso connettermi al database"));
 
 
 ?>
-<h2><? echo $Lbenvenuto; ?></h2>
+<h2><? echo $Lbenvenuto.chr(32).$nutente; ?></h2>
 
       <div style="margin-left: 20px;"><small><? echo $Lfrase; ?></center></div></small>
 <?php
@@ -105,7 +109,7 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
 		<? echo $Ldescrizionenote;?>
 	   </center>
 	   <br><b>
-		<? echo $row[dest];?>
+		<? echo $row['dest'];?>
 	   </b>
 	  </small>
 	 </td>
@@ -116,6 +120,7 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
 </table>
 <?php
 @mysqli_close($link);
+include('./menusx.inc');
 echo $Lhelpindex2;
 include('./botton.inc');
 } else {

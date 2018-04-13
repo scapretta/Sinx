@@ -51,13 +51,13 @@
   border-bottom: none;
 }
 #cssmenu > ul > li.active > a {
-  background: #ace5a1;
-  background: -moz-linear-gradient(#ace5a1 0%, #709400 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ace5a1), color-stop(100%, #709400));
-  background: -webkit-linear-gradient(#ace5a1 0%, #709400 100%);
-  background: linear-gradient(#ace5a1 0%, #709400 100%);
-  color: #4e5800;
-  text-shadow: 0 1px 1px #a5ce27;
+  background: #778dff;
+  background: -moz-linear-gradient(#778dff 0%, #233592 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #778dff), color-stop(100%, #233592));
+  background: -webkit-linear-gradient(#778dff 0%, #233592 100%);
+  background: linear-gradient(#778dff 0%, #233592 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 1px #233592;
 }
 #cssmenu > ul > li.has-sub > a:after {
   content: '';
@@ -71,7 +71,7 @@
   right: 14px;
   top: 12px;
   border: 5px solid transparent;
-  border-top: 5px solid #4e5800;
+  border-top: 5px solid #ffffff;
 }
 /* Sub menu */
 #cssmenu ul ul {
@@ -100,7 +100,7 @@
 body {
   background-image: url(./ImmTemplate/Sfondo_banner.png);
   background-attachment: fixed;
-  font-size: 18px; font-family: "thimes new roman", thimes, "sans serif", serif;
+  font-size: 18px; font-family: Tahoma, Arial, Helvetica, sans-serif ;
 }
 
 div::first-letter {
@@ -118,34 +118,54 @@ a.transp:hover {
 a:link    {text-decoration: none; color: brown;}
 a:visited {text-decoration: none; color: green;}
 a:hover   {color: red;}
-a {
-    text-shadow: -5pt 2pt 4pt #999;
-}
+
 
 h1, h2, h3 {
-  color: #c96013;
-  text-align: center;
-  font-weight: bold;
-  text-shadow: -5pt 2pt 4pt #999;
+  color: #9d9d9d;
+
 }
 
 hr {
   text-align: center;
+  background-image: url(./ImmTemplate/Sfondo_banner_rid.jpg);
+  height: 2px;
 }
 
 img { border: 0px solid #000; }
 
 .bordo {
-  border: 2px solid #222;
+  border: 1px solid #222;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 5px 5px 10px 2px #333333;
   
 }
 
 .header {
   text-align: left;
   width: 100%;
-  background-image: url(./ImmTemplate/Sfondo_banner_rid.jpg);
+  background: #778dff;
+  background: -moz-linear-gradient(#778dff 0%, #233592 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #778dff), color-stop(100%, #233592));
+  background: -webkit-linear-gradient(#778dff 0%, #233592 100%);
+  background: linear-gradient(#778dff 0%, #233592 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 1px #233592;
+
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.bottom {
+  text-align: left;
+  width: 100%;
+  background: #233592;
+  background: -moz-linear-gradient(#233592 0%, #778dff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #233592), color-stop(100%, #778dff));
+  background: -webkit-linear-gradient(#233592 0%, #778dff 100%);
+  background: linear-gradient(#233592 0%, #778dff 100%);
+  color: #ffffff;
+  text-shadow: 0 1px 1px #778dff;
+
   position: relative;
   top: 0px;
   left: 0px;
@@ -175,4 +195,3 @@ input:focus {
 input[required] {
 	border: 1px solid red;
 }
-	

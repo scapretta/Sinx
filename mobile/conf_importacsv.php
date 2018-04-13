@@ -2,11 +2,11 @@
 /*======================================================================+
  File name   : conf_importacsv.php
  Begin       : 2014-02-02
- Last Update : 2014-02-02
+ Last Update : 2017-12-08
 
  Description : confirm import file csv
 
- Author: Sergio Capretta
+ Author: Sergio Capretta & Marco Pedrazzi
 
  (c) Copyright:
                Sergio Capretta
@@ -36,11 +36,13 @@ Sinx for Association - Gestionale per Associazioni no-profit
   session_start();
 
 $user = $_SESSION['utente'];
-if ($user) {
+if ($user) 
+{
+
 
 	include ('./dati_db.inc');
-	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
-	
+        $connect = mysqli_connect("$host", "$username", "$password", "$db_name") or die("cannot connect DB");
+        
 	//Funzione per il redirect
 function redirect($url,$tempo = FALSE ){
  if(!headers_sent() && $tempo == FALSE ){
@@ -54,63 +56,188 @@ function redirect($url,$tempo = FALSE ){
   echo "<meta http-equiv=\"refresh\" content=\"" . $tempo . ";" . $url . "\">";
   }
 } 
-	
 // Recupero il file
 $upload_dir = "./tmp";
-if(@is_uploaded_file($_FILES["filecsv"]["tmp_name"])) {
-$file_name = $_FILES["filecsv"]["name"];
-@move_uploaded_file($_FILES["filecsv"]["tmp_name"], "$upload_dir/$file_name")
-or die("Impossibile spostare il file, controlla l'esistenza o i permessi della directory dove fare l'upload.");
+//se il file esiste
+    if(is_uploaded_file($_FILES["filecsv"]["tmp_name"])) 
+    {
+        $file_name = $_FILES["filecsv"]["name"];
+        //sposto il file
+        move_uploaded_file($_FILES["filecsv"]["tmp_name"], "$upload_dir/$file_name")
+        or die("Impossibile spostare il file, i permessi della directory .$upload_dir. dove viene effettuato l'upload.");
 
-$file = file("./$upload_dir/$file_name");
+        //mi assicuro che il separatore sia corretto                
+        ini_set('auto_detect_line_endings',TRUE);
+        //apro il file in lettura
+        $file = fopen("./$upload_dir/$file_name",'r');
 
-		// Creo una query di inserimento e la eseguo
-		
-		if ($file){ 
-	define('CSV_PATH',"$_SERVER['DOCUMENT_ROOT']");
-	// path where your CSV file is located
-	 
-	$csv_file = CSV_PATH . "/tmp/test.csv"; // Name of your CSV file
-	$csvfile = fopen($csv_file, 'r');
-	$theData = fgets($csvfile);
-	$i = 0;
-	while (!feof($csvfile)) {
-	$csv_data[] = fgets($csvfile, 1024);
-	$csv_array = explode(";", $csv_data[$i]);
-	$insert_csv = array();
-	$insert_csv['id_anagrafe'] = $csv_array[0];
-	$insert_csv['nome'] = $csv_array[1];
-	$insert_csv['cognome'] = $csv_array[2];
-	$insert_csv['indirizzo'] = $csv_array[3];
-	$insert_csv['cap'] = $csv_array[4];
-	$insert_csv['citta'] = $csv_array[5];
-	$insert_csv['provincia'] = $csv_array[6];
-	$insert_csv['tel'] = $csv_array[7];
-	$insert_csv['tel2'] = $csv_array[8];
-	$insert_csv['datan'] = $csv_array[9];
-	$insert_csv['classe'] = $csv_array[10];
-	$insert_csv['nomerif'] = $csv_array[11];
-	$insert_csv['materia'] = $csv_array[12];
-	$insert_csv['mansione'] = $csv_array[13];
-	$insert_csv['email'] = $csv_array[14];
-	$insert_csv['tipologia'] = $csv_array[15];
-	$insert_csv['note'] = $csv_array[16];
-	$insert_csv['immagine'] = $csv_array[17];
-	$insert_csv['associato'] = $csv_array[18];
-	$query = "INSERT INTO id_anagrafe(nome,cognome,indirizzo,cap,citta,provincia,tel,tel2,datan,classe,nomerif,materia,mansione,email,tipologia,note,immagine,associato)
-	VALUES('".$insert_csv['nome']."','".$insert_csv['cognome']."','".$insert_csv['indirizzo']."','".$insert_csv['cap']."','".$insert_csv['citta']."','".$insert_csv['provincia']."','".$insert_csv['tel']."','".$insert_csv['tel2']."','".$insert_csv['datan']."','".$insert_csv['classe']."','".$insert_csv['nomerif']."','".$insert_csv['materia']."','".$insert_csv['mansione']."','".$insert_csv['email']."','".$insert_csv['tipologia']."','".$insert_csv['note']."','".$insert_csv['immagine']."','".$insert_csv['associato']."')";
-	$n=mysqli_query($connect, $query, $connect );
-	$i++;
-	}
-	fclose($csvfile);
-
-	header('location: ./conferma.php?rif=Rubrica'); //Vado alla pagina di conferma
-	}else{ 
-		header('location: ./errore.php?rif=importacsv'); //Vado alla pagina di errore
-		}
-	}
-mysqli_close($connect);
-} else {
-header('Location: ./index.php');
+                    // Se l'apertura del file è avvenuta corretamente
+                    if ($file)
+                    {              
+                        //controllo il numero dei campi
+                        if(count($riga_csv = fgetcsv($file))==18)
+                        {
+                           //per sicurezza imposto la tabella a InnoDb (permette le transazioni)
+                           if(! mysqli_query($connect, "ALTER TABLE tb_anagrafe ENGINE=INNODB;"))
+                           {   //vai a pagina di errore
+                               error("Impossibile cambiare il tipo di engine della tb_anagrafe",'InsAnagrFile');
+                           }
+                           //avvio transazione sul db
+                           mysqli_query($connect, "START TRANSACTION") or error("Impossibile avviare la transazione!");
+                           
+                           //ciclo ogni riga del file che verrà inserito nell'array $riga_csv
+                           $i=2;
+                           $linecount = count(file('filename.csv'));
+                           while ( ($riga_csv = fgetcsv($file) ) !== FALSE ) 
+                           {
+                                //x debug
+                                //var_dump($riga_csv);
+                               
+                               
+                                //predispongo le variabili per la query
+                                $ntessera = $riga_csv[0]; //obbligatorio
+                                $nome = $riga_csv[1]; //obbligatorio
+                                $cognome = $riga_csv[2];
+                                $indirizzo = $riga_csv[3];
+                                //cap + comune
+                                $cap = $riga_csv[4].' - '.$riga_csv[5];                                 
+                                //regione
+                                $citta = $riga_csv[6];
+                                $provincia = $riga_csv[7];
+                                $tel = $riga_csv[8];
+                                $tel2 = $riga_csv[9];
+                                $datan = $riga_csv[10];
+                                $classe = $riga_csv[11];
+                                //codice fiscale
+                                $nomerif = $riga_csv[12];
+                                
+                                //tipo socio
+                                $materia = $riga_csv[13];
+                                //tipo collaboratore/extra
+                                $mansione = $riga_csv[14];
+                                
+                                $email = $riga_csv[15];
+                                $note = $riga_csv[16];
+                                $immagine = "personal.gif";
+                                //associato attivo
+                                $associato = $riga_csv[17];
+                                
+                                //se numero tessera e nome nn sono compilati
+                                if(empty($ntessera) || empty($nome))
+                                {
+                                    mysqli_query($connect, "ROLLBACK") or die("Impossibile eseguire il rollback delle modifiche al database!");
+                                    error("Riga ".$i.": numero tessera o nome assenti!",'InsAnagrFile'); 
+                                   
+                                } 
+                                
+                                //se classe !=null e materia,mansione sono null allora tipologia è Stud
+                                if(!empty($classe))
+                                {
+                                    if(empty($materia) && empty($mansione))
+                                    {
+                                        $tipologia="Stud";
+                                    }
+                                }
+                                //se materia !=null e classe,mansione sono null allora tipologia è Ins
+                                if(!empty($materia))
+                                {
+                                    if(empty($classe) && empty($mansione))
+                                    {
+                                        $tipologia="Ins";
+                                    }
+                                }
+                                //se mansione !=null e classe,materia sono null allora tipologia è Extra
+                                if(!empty($mansione))
+                                {
+                                    if(empty($classe) && empty($materia))
+                                    {
+                                        $tipologia="Extra";
+                                    }
+                                }
+                                if (!isset($tipologia))
+                                {
+                                    mysqli_query($connect, "ROLLBACK") or die("Impossibile eseguire il rollback delle modifiche al database!");
+                                    error("Riga ".$i.": Solo uno dei seguenti campi deve essere compilaro! materia | classe | mansione.",'InsAnagrFile'); //Vado alla pagina di errore}
+                                    
+                                }
+                                //predispongo la query
+                                $query = "INSERT INTO tb_anagrafe(ntessera,nome,cognome,indirizzo,cap,citta,provincia,tel,tel2,datan,                                      classe,nomerif,materia,mansione,email,tipologia,note,associato)"
+                                        . "VALUES             ('$ntessera','$nome','$cognome','$indirizzo','$cap','$citta','$provincia','$tel','$tel2','$datan','$classe','$nomerif','$materia','$mansione','$email','$tipologia','$note','$associato')";  
+                           
+                          
+                           
+                              $result = mysqli_query($connect, $query);
+                               //se query fallisce
+                              if($result!=TRUE)
+                              {
+                                 mysqli_query($connect, "ROLLBACK") or die("Impossibile eseguire il rollback delle modifiche al database!");
+                                 error("Riga ".$i."Query fallita!!",'InsAnagrFile');
+                              }
+                              
+                                $i++;
+                           }
+                           mysqli_query($connect, "COMMIT");
+                           //chiudo e cancello il file e reimposto il settaggio di php a default
+                           fclose($file) or error("Impossibile chiudere il file!",'InsAnagrFile');
+                           unlink("./$upload_dir/$file_name") or error("Impossibile cancellare il file $upload_dir/$file_name",'InsAnagrFile');
+                           ini_set('auto_detect_line_endings',FALSE);  
+                           mysqli_close($connect);
+                           conferma("InsAnagrFile");
+                        }
+                        else //se num dei campi è diverso
+                        { 
+                            error("Numero dei campi errato!",'InsAnagrFile'); //Vado alla pagina di errore
+                        }        
+                    }
+                    else
+                    { 
+                        error("Problemi nell'apertura del file caricato",'InsAnagrFile'); //Vado alla pagina di errore
+                    }
+    }
+    else
+    { 
+        error("Upload dei file fallito!!",'InsAnagrFile'); //Vado alla pagina di errore
+    }
 }
+else 
+{
+    header('Location: ./index.php');
+}
+
+function error($msg=NULL,$url_redirect=NULL)
+{
+    if($msg!=null)
+    {
+        if($url_redirect!=null)
+        {
+            echo <<<EOF
+            <script type="text/javascript">
+            window.location.href = "errore.php?msg=$msg&rif=$url_redirect";
+            </script>
+EOF;
+            
+            exit();
+        }
+        else 
+        {die ('Function: error Parametro url_redirect assente!');}
+    }
+    else
+    {die ('Function: error Parametro msg assente!');}
+    
+}
+function conferma($url_redirect=NULL)
+{
+    if($url_redirect!=null)
+    {
+    echo <<<EOF
+            <script type="text/javascript">
+            window.location.href = "conferma.php?rif=$url_redirect";
+            </script>
+EOF;
+    }
+    
+    else
+    {die ('Function: error Parametro url assente!');}
+}
+
 ?>

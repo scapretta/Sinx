@@ -35,7 +35,7 @@ include('./menu.inc');
 
 <h3><?php echo $Lbackup; ?></h3>
 <center><sub><i><?php echo $Lcomandobackup; ?></center>
-<center><a class="transp" href='./Backup_database.php'><img src="./ImmTemplate/Pulsanti/Backup.png" title="Effettua un backup dei dati del database" ></img></a></center>
+<center><a class="transp" href='./Backup_database.php'><i class="material-icons">open_in_browser</i></a></center>
 <hr width='60%'><br>
 
 <h3><?php echo $Lripristino; ?></h3>

@@ -91,6 +91,7 @@ echo "<input name='id_mod' size='10' type='text' value='$idprec' readonly>";
 	<option value="" selected="selected"></option>
     <option value="ntessera">Tessera</option>
   <option value="nome">Nome</option>
+  <option value="cognome">Cognome</option>
   <option value="indirizzo">Indirizzo</option>
   <option value="cap">Comune</option>
   <option value="citta">Regione</option>

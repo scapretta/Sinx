@@ -32,7 +32,18 @@ if ($user == 'admin') {
 	$cf = $_POST['cf'];
 	$email = $_POST['email'];
 	$webmail = $_POST['webmail'];
+	$PEC = $_POST['PEC'];
+	$webPEC = $_POST['webPEC'];
 	$sito = $_POST['sito'];
+	$facebook = $_POST['facebook'];
+	$instagram = $_POST['instagram'];
+	$twitter = $_POST['twitter'];
+	$youtube = $_POST['youtube'];
+	$banca = $_POST['banca'];
+	$IBAN = $_POST['IBAN'];
+	$BIC = $_POST['BIC'];
+	$HomeBanking = $_POST['HomeBanking'];
+	$IscrizioneODVoAPS = $_POST['IscrizioneODVoAPS'];
 
 
 //Funzione per il redirect
@@ -49,17 +60,16 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 	include ('./dati_db.inc');
-	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
+	$connect = mysqli_connect("$host", "$username", "$password", "$db_name") or die("cannot connect DB");
 
 //CONTROLLO DEI CAMPI
 
  
-		$sql="UPDATE tb_anagrafe_associaz SET nome='$nome', indirizzo='$indirizzo', numero='$numero', cap='$cap', citta='$citta', provincia='$provincia', tel='$tel', fax='$fax', cf='$cf', email='$email', webmail='$webmail', sito='$sito' WHERE id_anagrafe = '1'"; //inserisco i valori nel database
-		$result=mysqli_query($connect, $sql);
+		$query="UPDATE tb_anagrafe_associaz SET nome='$nome', indirizzo='$indirizzo', numero='$numero', cap='$cap', citta='$citta', provincia='$provincia', tel='$tel', fax='$fax', cf='$cf', email='$email', webmail='$webmail', PEC='$PEC', webPEC='$webPEC', sito='$sito', facebook='$facebook', instagram='$instagram', twitter='$twitter', youtube='$youtube', banca='$banca', IBAN='$IBAN', BIC='$BIC', HomeBanking='$HomeBanking', IscrizioneODVoAPS='$IscrizioneODVoAPS' WHERE id_anagrafe = '1'"; //inserisco i valori nel database
+		$result=mysqli_query($connect, $query);
 
 	if (!$result) {
-
-		header('location: errore.php?rif=dati_Associaz'); //Vado alla pagina di errore
+		header('location: errore.php?rif=dati_Associaz&msg='.$connect->error); //Vado alla pagina di errore
 	}else{ 
 		header('location: ./conferma.php?rif=dati_Associaz'); //Vado alla pagina di conferma
 		}

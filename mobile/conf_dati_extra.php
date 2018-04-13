@@ -85,15 +85,6 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 
-//Controllo campi compilati
-		if ($nome == "")
- 		{
-   		echo "<center><b>Il campo nome &egrave obbligatorio</b></center>";
-   		redirect('./InsAnagrExtra.php' ,2);
-		// break;
-die ("");
-		}
-
 // *** GESTIONE DELL'IMMAGINE ***
 $upload_dir = "./Immagini/Utenti";
 if(@is_uploaded_file($_FILES["immagine"]["tmp_name"])) {

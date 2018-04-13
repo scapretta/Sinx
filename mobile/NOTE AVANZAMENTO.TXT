@@ -1,0 +1,74 @@
+30-11-2017 - Sinx 0.99.0
+
+Modifica tabella db associazione con l'aggiunta delle voci (suggerimento di Ivano Bucelli): 
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN webPEC varchar(100) AFTER PEC;
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN facebook varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN instagram varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN twitter varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN youtube varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN banca varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN IBAN varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN BIC varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN HomeBanking varchar(100);
+ALTER TABLE tb_anagrafe_associaz ADD COLUMN IscrizioneODVoAPS varchar(100);
+
+01-12-2017 - Sinx 0.99.1
+
+Completamento aggiunta voci associazione, file conf_mod_Associaz.php, datiassociaz.inc (Cartella Lang), dati_Associaz.php
+
+03-12-2017 - Sinx 0.99.2
+
+aggiornamento file top.inc e index2.php con aggiunta informazioni utili e grafica, ampliamento menu Anagrafica Associazione e inserimento dei tasti rapidi (suggerimenti di Ivano Bucelli)
+
+04-02-2018 - Sinx 0.99.3 by Marco Pedrazzi
+
+fix: file /install/index.php Correzione bug informazioni nel top (header)
+fix: file /install/index.php e conf dati utente controllo campi, da php ad html 5 
+fix: file /install/conf_immagine_install sostituito break con return php 7.0 non supporta i break se non nel costrutto switch
+fix: file /install/install2 controllo campi, da php ad html 5
+fix: file /install/install3.php e confdati utente controllo campi, da php ad html 5 
+
+10-02-2018 - Sinx 0.99.4 by Marco Pedrazzi
+
+fix: il campo cognome che mancava in:
+Anagrafica - Direttivo 
+               - Associati
+               - Altri Collaboratori
+E in stampa - Libro soci
+E in vedi tessere registrate
+
+17-02-2018 - Sinx 0.99.5 by Marco Pedrazzi
+
+fix: nome colonna errato in install (instagram)
+fix: Prima nota/Quietanza/Fattura sostituito break con exit php 7.0 non supporta i break se non nel costrutto switch.
+fix: Aggiunto pattern html5 sui form di inserimento in anagrafica: telefono, cellulare,codice fiscale.
+fix: Obbligatorietà html5 sui form di inserimento in anagrafica: Funzione,Tipo Associato,Mansione.
+fix: Eliminazione controlli sui form di inserimento in anagrafica non più necessari.
+fix: dimensione colonne in stampa libro soci
+fix: pagina stampa ricevute migrata a mysqli
+fix: Testati e corretti alcuni errori "Warning" nel caso di installazione di Sinx su Xampp V.3.2.2 su Windows 10.
+fix: link menu associazione
+update: Campi in inserimento anagrafica: regione provincia comune ora sono mutualmente esculsivi con tecnica ajax
+update: Messaggio informativo in inserimento anagrafica: numero tessera duplicato con tecnica ajax 
+
+21-02-2018 - Sinx 0.99.6 by Marco Pedrazzi
+fix: Url errato chiamata ajax in dati comuni
+fix: Aggiornato README.MD grazie per la segnalazione https://github.com/mfvescovi
+fix: Tag versione
+fix: Testati e corretti alcuni errori "Warning".
+
+
+
+
+Bug da risolvere (by Marco Pedrazzi):
+
+-- (chiedere all'autore - codice non commentato) Warning: sort() expects parameter 1 to be array, null given in D:\xampp\htdocs\Sinx\Files.php on line 69
+-- (chiedere all'autore - codice non commentato) Warning: Invalid argument supplied for foreach() in D:\xampp\htdocs\Sinx\Files.php on line 70
+-- (chiedere all'autore - codice non commentato) Deprecated: The each() function is deprecated. This message will be suppressed on further calls in D:\xampp\htdocs\Sinx\Files.php on line 120
+-- verificare bug nome colonna da git hub 
+
+Update da effettuare (by Marco Pedrazzi):
+
+-- agg modulo iscrizione minorenni http://sinx.forumattivo.com/t6-bug-installazione-xammp
+-- notificare prerequisiti tipo "short tag php ad on" e presenza db. 
+

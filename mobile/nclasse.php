@@ -44,7 +44,7 @@ include('./menu.inc');
       <center><h3><?php echo $Ltitolofunzione ?></h3></center>
 	
  <form action='./nclasse_exp.php'>
- <center><button name="stampa" type="submit" <?php echo($limit);?> <? echo($limite);?>>
+ <center><button name="stampa" type="submit" <?php echo($limit); echo($limite);?>>
    Cancella | Modifica
  </button></center>
  </form>
@@ -52,7 +52,7 @@ include('./menu.inc');
 <hr width="60%">
 	<p align="center"><small><b><?php echo $Lnuovofunzione ?></b></small></p>
 <!-- Inserimento Voci db -->
-      <form action='./conf_nmateria.php?Tabella=tb_classe&Colonna=classe' method='POST'>
+      <form action='./conf_nmateria.php?Tabella=tb_classe&Colonna=classe&Pagina=nclasse' method='POST'>
         <table align='center' border='0' width='60%'>
           <tbody>
             <tr>
@@ -61,7 +61,7 @@ include('./menu.inc');
             </tr>
             <tr>
               <td colspan='2' align='center'>
-              <input value='invia' type='submit' <?php echo($limit);?> <? echo($limite);?>></td>
+              <input value='invia' type='submit' <?php echo($limit); echo($limite);?>></td>
             </tr>
           </tbody>
         </table>

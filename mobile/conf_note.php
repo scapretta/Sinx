@@ -37,7 +37,7 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 	include ('./dati_db.inc');
-	$link=mysqli_connect("$host", "$username", "$password","$db_name")or die(mysqli_connect_error("Non posso connettermi al database"));
+	$link=mysqli_connect("$host", "$username", "$password","$db_name", $port)or die(mysqli_connect_error("Non posso connettermi al database"));
 
 //CONTROLLO DEI CAMPI
 

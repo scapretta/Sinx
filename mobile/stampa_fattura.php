@@ -103,14 +103,14 @@ or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 {
 echo <<<EOM
 
-<table align='right' border='0' cellpadding='0' cellspacing='0' width='90%'>
+<table align='center' border='0' cellpadding='2' cellspacing='2' width='90%'>
 
 	<tr>
 	<td width='5%' height='35px' bgcolor="#D1D1D1"><small><b>Q.ta </b></small></td>
-	<td width='60%' height='35px' bgcolor="#D1D1D1"><small><b>Descrizione </b></small></td>
-	<td width='10%' height='35px' bgcolor="#D1D1D1"><small><b>Prezzo un. </b></small></td>
-	<td width='5%' height='35px' bgcolor="#D1D1D1"><small><b>IVA </b></small></td>
-	<td width='20%' height='35px' bgcolor="#D1D1D1"><small><b>Totale </b></small></td>
+	<td width='55%' height='35px' bgcolor="#D1D1D1"><small><b>Descrizione </b></small></td>
+	<td align='right' width='18%' height='35px' bgcolor="#D1D1D1"><small><b>Prezzo un. </b></small></td>
+	<td align='right' width='8%' height='35px' bgcolor="#D1D1D1"><small><b>IVA </b></small></td>
+	<td align='right' width='24%' height='35px' bgcolor="#D1D1D1"><small><b>Totale </b></small></td>
 	</tr>
 EOM;
 }
@@ -118,13 +118,16 @@ EOM;
 while ($riga=mysqli_fetch_array($ris))
 {
 $modpagamento=$riga[modpaga];
+$valiva=$riga[euro]*($riga[iva]/100);
+$imponibile=$riga[euro];
 echo <<<EOM
 	<tr>
 	<td height='35px'><small>$riga[quantita]</small></td>
-	<td height='35px'><small>$riga[data] - $riga[descr]</small></td>
-	<td height='35px'><small>$riga[euro] &euro;</small></td>
-	<td height='35px'><small>$riga[iva]</small></td>
-	<td><small>$riga[totale] &euro;</small></td>
+	<td height='35px'><small>$riga[descr]</small></td>
+	<td align='right' height='35px'><small>$riga[euro] &euro;</small></td>
+	<td align='right' height='35px'><small>$riga[iva] %</small></td>
+
+	<td align='right'><small>$riga[totale] &euro;</small></td>
 	</tr>
 EOM;
 }
@@ -141,14 +144,23 @@ $result = mysqli_query($connect,  $query);
 $totale = $row['totale_numero'];
 {
    echo <<<EOM
-
-<table align='right' border='0' cellpadding='0' cellspacing='0' width='30%' >
+</br>
+<table align='right' border='0' cellpadding='2' cellspacing='2' width='30%' >
 	<tr>
-	<td width='40%' height='50px' ><small><b>Totale Fattura:</b></small></td>
-	<td width='60%'><small>$totale &euro;</small></td>
+	<td ><small><b>Imponibile:</b></small></td>
+	<td ><small>$imponibile &euro;</small></td>
+	</tr>
+	<tr>
+	<td ><small><b>Imposta iva:</b></small></td>
+	<td ><small>$valiva &euro;</small></td>
+	</tr>
+	<tr>
+	<td ><small><b>Totale Fattura:</b></small></td>
+	<td ><small>$totale &euro;</small></td>
+	</tr>
 </table>
 <br>
-<table align='right' border='1' cellpadding='0' cellspacing='0' width='90%' >
+<table align='center' border='1' cellpadding='0' cellspacing='0' width='90%' >
 	<tr>
 	<td width='20%' height='50px' bgcolor="#FFFFFF"><small><b>Modalit&agrave di pagamento: </b></td>
 	<td width='55%' bgcolor="#FFFFFF"><small>$modpagamento </small></td>

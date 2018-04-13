@@ -27,7 +27,7 @@ if ($user) {
 include('./top.inc');
 include('./menu.inc');
 $iniz = $_POST['iniziale'];
-$tipologia = $_GET[tipologia];
+$tipologia = $_GET['tipologia'];
 
 	include ('./dati_db.inc');
 	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
@@ -66,7 +66,7 @@ echo <<<EOM
 		<input type="submit" name="associato" value="$row[id_anagrafe]">
 		</form></small></td>
         <td ><small>$row[ntessera]</small></td>
-	<td ><small>$row[nome]</small></td>
+	<td ><small>$row[nome] $row[cognome]</small></td>
 	<td ><small>$row[indirizzo]</small></td>
 	<td ><small>$row[cap] $row[citta]</small></td>
 	<td ><small>$row[provincia]</small></td>

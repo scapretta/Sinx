@@ -22,32 +22,7 @@ $paginaFiles = "Files.inc";
 $linguaFiles = ($langFiles.$paginaFiles);
 include($linguaFiles);
 
-	//Funzione per il redirect
-	function redirect($url,$tempo = FALSE ){
- 	if(!headers_sent() && $tempo == FALSE ){
-	  header('Location:' . $url);
-	 }elseif(!headers_sent() && $tempo != FALSE ){
-	  header('Refresh:' . $tempo . ';' . $url);
-	 }else{
-	  if($tempo == FALSE ){
-	    $tempo = 0;
-	  }
-	  echo "<meta http-equiv=\"refresh\" content=\"" . $tempo . ";" . $url . "\">";
-	  }
-	}
-
 if ($user == 'admin') {
-  $limit=''; $limite='';
-} else if ($user == 'limitato') {
-  echo $Llivello1gestimmagini;
-redirect('./index2.php',3); break;
-} else if ($user == 'operatore') {
-  echo $Llivello1gestimmagini;
-redirect('./index2.php',3); break;
-} else if ($user == 'associato') {
-  $limit='disabled'; $limite='disabled';
-}
-
 include('./top.inc');
 include('./menu.inc');
 
@@ -60,7 +35,6 @@ if ($handle_dir = opendir($base)) # Apre la directory, e verifica che il percors
 {
     echo "<UL class=\"testo\">\n"; 
   while (false!==($dir = readdir($handle_dir))) # Legge una voce finchè non è finita la directory, e la memorizza in $dir
-
   {
     if ($dir!="." && $dir!="..") #Evita di stampare "." e ".."
 
@@ -79,7 +53,7 @@ if ($handle_dir = opendir($base)) # Apre la directory, e verifica che il percors
         {
           #Codice nel caso di file
               if ($dir != "." && $dir != "..")
-        {
+            {
 
                    $lista[]=('<LI style="list-style-image: url(./ImmTemplate/doc.png)"><A href="' .$base . '/' . $dir . '">' . str_replace('_', ' ', substr($dir,0, strrpos($dir,"."))) . "</A></LI>\n");
               }
@@ -111,7 +85,7 @@ else #Codice nel caso di percorso non trovato
       <tr><td><center><h2><? echo $Ltitologestfiles ?></h2><hr></center></td></tr>
 	<tr><td><center>
 		<form action="./gest_files.php">
-		 <input type="submit" <?php echo($limit);?> <? echo($limite);?> value="Carica, cancella file">
+		 <input type="submit" value="Carica, cancella file">
 	</form></center></td></tr>
     <tr><td VALIGN="top"> <?php elenco_dir("./Download"); ?></td></tr>
     
@@ -188,6 +162,23 @@ echo "Nella cartella <strong>$directory</strong> ci sono <strong>{$f}</strong> f
 include('./menusx.inc');
 echo $Lhelpgestimmagini;
 include('./botton.inc');
+} else {
+	//Funzione per il redirect
+	function redirect($url,$tempo = FALSE ){
+ 	if(!headers_sent() && $tempo == FALSE ){
+	  header('Location:' . $url);
+	 }elseif(!headers_sent() && $tempo != FALSE ){
+	  header('Refresh:' . $tempo . ';' . $url);
+	 }else{
+	  if($tempo == FALSE ){
+	    $tempo = 0;
+	  }
+	  echo "<meta http-equiv=\"refresh\" content=\"" . $tempo . ";" . $url . "\">";
+	  }
+	}
 
+echo $Llivello1gestimmagini;
+redirect('./index2.php',3);
+}
 ?>
 

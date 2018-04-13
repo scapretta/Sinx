@@ -1,12 +1,12 @@
-<!--
+<?php 
 /*======================================================================+
- File name   : conferma.php
- Begin       : 2010-08-04
- Last Update : 2017-12-20
+ File name   : ajax_check_card_number.php
+ Begin       : 2018-02-16
+ Last Update : 2018-02-16
 
- Description : error occured
+ Description : Check card with double number.php
 
- Author: Sergio Capretta & Marco Pedrazzi
+ Author: Marco Pedrazzi
 
  (c) Copyright:
                Sergio Capretta
@@ -30,22 +30,16 @@ Sinx for Association - Gestionale per Associazioni no-profit
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=========================================================================+*/ -->
+=========================================================================+*/
+include ('./dati_db.inc');
+$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
 
- <html>
-<head>
-  <title>!! Errore !!</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta http-equiv="refresh" content="5;URL=<?php echo $_GET['rif'];?>.php">
-</head>
-<body>
-<div style="text-align: center;"><img src='./Immagini/dialog-error.png'><span
- style="font-weight: bold;"><br>
-<?php echo $_GET['msg'];?></span><br>
-<span style="font-weight: bold;">Se
-la pagina non dovesse ricaricarsi in automatico, <a
- href="./<?php echo $_GET['rif'].'.php';?>">premi qui</a></span><br>
-</div>
-</body>
-</html>
+$numeroCarta=$_POST['numeroCarta'];
+if (isset($numeroCarta)){Check_card_number($numeroCarta,$connect);}
 
+function Check_card_number($numeroCarta,$connect)
+{   
+    $queryGetNumbers="SELECT COUNT(*) FROM tb_anagrafe WHERE ntessera='$numeroCarta'";
+    $result=mysqli_query($connect,  $queryGetNumbers) or die("<b>Errore:</b> Impossibile eseguire la query GetNumbers");
+    echo $result->fetch_row()[0];
+}

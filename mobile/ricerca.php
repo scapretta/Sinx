@@ -59,7 +59,7 @@ include('./menu.inc');
  border="0" cellpadding="2" cellspacing="1">
   <tbody>
     <tr>
-      <td width="33%"><img align="middle" src="./ImmTemplate/block.png"><?php echo $Lfondatori; ?></td>
+      <td width="33%"><i class="material-icons">perm_identity</i><?php echo $Lfondatori; ?></td>
       <td width="33%">
 	<form action='./ricerca_nome_stud.php?tipologia=Stud' method='POST'>
 
@@ -129,7 +129,7 @@ echo "<option>" .$row["0"]. "</option>";
  border="0" cellpadding="2" cellspacing="1">
   <tbody>
 	<tr>
-      <td width="33%"><img align="middle" src="./ImmTemplate/personal.gif"><?php echo $Lassociati; ?></td>
+      <td width="33%"><i class="material-icons">supervisor_account</i><?php echo $Lassociati; ?></td>
       <td width="33%">
 	<form action='./ricerca_nome_stud.php?tipologia=Ins' method='POST'>
 
@@ -202,7 +202,7 @@ echo "<option>" .$row["0"]. "</option>";
  
   <tbody>
 	<tr>
-      <td width="33%"><img align="middle" src="./ImmTemplate/masssubscribe.gif"><?php echo $Lcontatti; ?></td>
+      <td width="33%"><i class="material-icons">portrait</i><?php echo $Lcontatti; ?></td>
 	<td width="33%">	<form action='./ricerca_nome_stud.php?tipologia=Extra' method='POST'>
 	<p colspan='2' align='center'>
 	<input value=<? echo $Lricercanome; ?> type='submit'></p></td>

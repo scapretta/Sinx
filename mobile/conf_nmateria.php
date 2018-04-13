@@ -37,27 +37,30 @@ function redirect($url,$tempo = FALSE ){
   }
 } 
 
-		if ($materia == "")
- 		{
-   		echo "<center><b>inserimento non valido</b></center>";
-   		header('location: ./nmateria.php' ,2);
-		// break;
-die ("");
-		}
+
 
 	include ('./dati_db.inc');
 	$connect = mysqli_connect("$host", "$username", "$password", "$db_name", $port ) or die("cannot connect DB");
 
 $tb_materia = $_GET[Tabella];
 $colonna = $_GET[Colonna];
+$pagina = $_GET[Pagina];
+
+		if ($materia == "")
+ 		{
+   		echo "<center><b>inserimento non valido</b></center>";
+   		header("location: $pagina.php" ,2);
+		// break;
+die ("");
+		}
 
 
 	if ($materia){ //se c'è il campo materia
 		$sql="insert into $tb_materia($colonna) values('$materia')"; //inserisco i valori nel database
 		$result=mysqli_query($connect, $sql);
-		header('location: ./conferma.php?rif=nmateria'); //Vado alla pagina di conferma
+		header("location: ./conferma.php?rif=$pagina"); //Vado alla pagina di conferma
 	}else{ 
-		header('location: ./errore.php?rif=nmateria'); //Vado alla pagina di errore
+		header("location: ./errore.php?rif=$pagina"); //Vado alla pagina di errore
 		}
 mysqli_close($connect);
 } else {
