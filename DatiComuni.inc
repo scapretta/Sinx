@@ -48,11 +48,11 @@ include($linguadaticom);
 	    </tr>
             <tr>
               <td width='150'><font color="red"><?php echo $Lnomedaticomuni; ?></td>
-              <td><input name='nome' size='30' type='text' required='required'><br><small><sub><i><?php $Listrnome; ?></small></i></sub></td>
+              <td><input name='nome' size='30' type='text' required='required'><br><small><sub><i><?php echo $Listrnome; ?></small></i></sub></td>
             </tr>
             <tr>
               <td width='150'><?php echo $Lcognomedaticomuni; ?></td>
-              <td><input name='cognome' size='30' type='text'><br><small><sub><i><?php $Listrcognome; ?></small></i></sub></td>
+              <td><input name='cognome' size='30' type='text'><br><small><sub><i></small></i></sub></td>
             </tr>
             <tr>
               <td width='150'><?php echo $Lindirizzo; ?></td>
