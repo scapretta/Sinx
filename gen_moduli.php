@@ -153,7 +153,7 @@ Ed assumere le deliberazioni conseguenti, tra cui, ove se necessario ed opportun
 In caso di impossibilit&agrave a partecipare in ogni modo alla riunione, invito cortesemente a giustificare l'assenza.<br><br>
    <b>$luogo, $data</b> <br><br><br> 
  	Il Presidente del Consiglio Direttivo<br><br>
- 	<b>$row[nome]</b>";
+ 	<b>$row[nome] $row[cognome]</b>";
 }
 if ($modulo == 'rapporto')
 {
@@ -180,7 +180,7 @@ $rs=mysqli_query($connect, $Query_nome)
 or die("Errore nella query $query: " . mysqli_error()); //die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 $row=mysqli_fetch_array($rs);
 
-echo "<b>$row[nome]</b>";
+echo "<b>$row[nome] $row[cognome]</b>";
 }
 
 } else {
