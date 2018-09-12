@@ -36,6 +36,7 @@ include('./menu.inc');
 <table align='center' border='0' cellpadding='3' cellspacing='2' width='100%'>
 	<tr>
 	<td width='150'><small><b><?php echo $Lnome; ?></b></small></td>
+	<td width='150'><small><b><?php echo $Lcognome; ?></b></small></td>
 	<td width='150'><small><b><?php echo $Lindirizzo; ?></b></small></td>
 	<td width='150'><small><b><?php echo $Lcitta; ?> </b></small></td>
 	<td width='150'><small><b><?php echo $Lprovincia; ?> </b></small></td>
@@ -69,6 +70,7 @@ while ($row=mysqli_fetch_array($rs))
 echo <<<EOM
 	<tr>
 	<td width='150'><small>$row[nome]</small></td>
+	<td width='150'><small>$row[cognome]</small></td>
 	<td width='150'><small>$row[indirizzo]</small></td>
 	<td width='150'><small>$row[cap] $row[citta]</small></td>
 	<td width='150'><small>$row[provincia]</small></td>
