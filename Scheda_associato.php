@@ -114,7 +114,7 @@ echo <<<EOM
 EOM;
 
 // popolo la tabella delle ricevute
-$Query = "SELECT * FROM tb_ricevute WHERE nome = '$row[nome]'";
+$Query = "SELECT * FROM tb_ricevute WHERE nome = '$row[cognome] $row[nome]'";
 $rb=mysqli_query($connect, $Query)
 or die("Errore nella query $Query: " . mysqli_error());
 $nome = $row['nome'];
