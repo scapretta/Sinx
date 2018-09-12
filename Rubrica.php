@@ -50,7 +50,7 @@ include('./menu.inc');
 $alfabeto = array(1 => "a", "b", "c", "d", "e", "f" ,"g" ,"h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t" ,"u", "v", "w", "x", "y", "z");
 for ($cont=1; $cont<27; $cont++)
 {
-$Query_nome = "SELECT * FROM tb_anagrafe WHERE nome REGEXP '^$alfabeto[$cont]' ORDER BY nome";
+$Query_nome = "SELECT * FROM tb_anagrafe WHERE cognome REGEXP '^$alfabeto[$cont]' ORDER BY cognome";
 
 $rs=mysqli_query($connect, $Query_nome)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
