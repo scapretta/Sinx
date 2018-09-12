@@ -35,6 +35,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 //top
 $Lpresentazionerubrica = "Rubrica Associati";
 $Lnome = "nome ";
+$Lcognome = "cognome ";
 $Lindirizzo = "indirizzo ";
 $Lcitta = "Citt&agrave ";
 $Lprovincia = "Provincia ";
