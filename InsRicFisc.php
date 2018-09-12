@@ -105,7 +105,7 @@ $ultimoid= $Tultimoid['MAX(id_ric)'];
    <option value="" selected="selected"><?php echo $Lcausale; ?></option>
 
 <?php
-$query = "SELECT descrizione FROM tb_conto_economico";
+$query = "SELECT descrizione FROM tb_conto_economico WHERE costoricavo='ricavi'";
  
 $rs=mysqli_query($connect,  $query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
@@ -125,14 +125,14 @@ echo "<option>" .$row["0"]. "</option>";
    <option value="" selected="selected"><?php echo $Lnome; ?>: </option>
 
 <?php
-$query = "SELECT nome FROM tb_anagrafe ORDER BY nome";
+$query = "SELECT cognome, nome FROM tb_anagrafe ORDER BY cognome";
  
 $rs=mysqli_query($connect,  $query)
 or die("<b>Errore:</b> Impossibile eseguire la query della Combo");
 
 while ($row=mysqli_fetch_row($rs))
 {
-echo "<option>" .$row["0"]. "</option>";
+echo "<option>" .$row["0"]," ",$row["1"]. "</option>";
 
 }
 
@@ -142,7 +142,7 @@ echo "<option>" .$row["0"]. "</option>";
             </tr>
             <tr>
               <td ><font color="red"><small><?php echo $Leuro; ?>*:</small></td>
-              <td colspan='2'><input name='euro' size='30' type='text' required='required'></td>
+		<td colspan='2'><input name='euro' size='30' type='number' min='1' step='any' required='required'></td>
             </tr>
            
             <tr>
