@@ -312,7 +312,7 @@ echo "Tabella Stato Patrimoniale Creata!<br>";
 $sql = ("CREATE TABLE `comuni` (
   `id_com` int(6) unsigned NOT NULL auto_increment,
   `id_pro` int(4) unsigned NOT NULL,
-  `cap` int(8) unsigned NOT NULL,
+  `cap` int(5) unsigned zerofill NOT NULL
   `comune` varchar(200) character set latin1 NOT NULL,
   PRIMARY KEY  (`id_com`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8101");
