@@ -30,6 +30,7 @@ if ($user) {
 	$nnumfattura = $_POST['fattnum'];
 	$nnome = $_POST['nome'];
 	$niva = $_POST['iva'];
+	$modpagam = $_POST['modpaga'];
 
 $descrizione = htmlspecialchars($ndescrizione, ENT_NOQUOTES, "UTF-8");
 $quantita = htmlspecialchars($nquantita, ENT_NOQUOTES, "UTF-8");
@@ -106,7 +107,7 @@ $tb_fattura = ('tb_fatture(id_fatt, nome, data, euro, quantita, descr, iva, modp
 $tb_tot_fattura = ('tb_tot_fatture(id_tot_fatture, tot_fattura, nome, data)');
 
 	if ($totfattura){ 
-		$sql="insert into $tb_fattura values('$numfattura', '$nome', '$data', '$prezzoun', '$quantita', '$descrizione', '$iva', '', '$totfattura')";
+		$sql="insert into $tb_fattura values('$numfattura', '$nome', '$data', '$prezzoun', '$quantita', '$descrizione', '$iva', '$modpagam', '$totfattura')";
 		$result=mysqli_query($connect, $sql) or die (mysqli_error());
 
 //Aggiorno i totali della singola fattura
