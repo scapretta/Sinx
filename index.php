@@ -74,7 +74,7 @@ Sinx for Association - Gestionale per Associazioni no-profit
 					<input class="submit" name="submit" type="submit" value="<- Login ->" />
 </td>
 </tr>
-    <tr bgcolor="#efefef"><td><center><i><small><sub><input name="versione" size='5%' readonly="text" value=" 1.0"></sub></small></i></center></td>
+    <tr bgcolor="#efefef"><td><center><i><small><sub><input name="versione" size='5%' readonly="text" value=" 1.1"></sub></small></i></center></td>
     <td><center><i><small><sub>www.sinx.it -- info@sinx.it</sub></small></i></center><br></td></tr>
 <!-- SCELTA LINGUAGGIO -->
 
