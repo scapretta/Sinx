@@ -231,15 +231,19 @@ echo "<option>" .$row["0"]. "</option>";
 	 <td height='25px' width='11%'><small><?php echo $Lquantita; ?></small></td>
 	 <td height='25px' width='20%'><small><?php echo $Lprezzoun; ?>.</small></td>
 	 <td height='25px' width='7%'><small><?php echo $Liva; ?></small></td>
-	 <!-- <td height='25px' width='25%'><small><?php echo $Lmodpaga; ?></small></td> -->
-	</tr>
+    </tr>
+    <tr>
+	 <td height='25px' width='75%'><small><?php echo $Lmodpaga; ?></small></td>
+    </tr>
 
 	<tr>
 	      <td><input name='Descr' size='40%'  type='text'></td>
               <td><input name='Qta' size='10%' type='text'></td>
               <td><input name='prezzoun' size='20%' type='text'></td>
               <td><input name='iva' size='4%' type='text'></td>
-      <!--        <td><input name='modpaga' size='25%' type='text'></td> -->
+    </tr>
+    <tr>
+    <td height='25px' width='20%'><small>Modalit&agrave di pagamento <input name='modpaga' size='40%' type='text'><br><i> Se inserisci più voci in fattura, aggiungi la modalit&agrave di pagamento nell'ultima voce</i></small> </td>
 	</tr>
 </table>
 <p><center><small><?php echo $Lnota2; ?></small></center></p>
@@ -263,7 +267,9 @@ echo "<option>" .$row["0"]. "</option>";
               <td><select name="id" >
    <option value="" selected="selected"></option>
 
+
 <?php
+//VISUALIZZA FATTURE
 $a = '1';
 do {
 $query = "SELECT id_tot_fatture
