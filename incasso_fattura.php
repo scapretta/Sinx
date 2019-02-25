@@ -110,7 +110,7 @@ $nuovovalore = ($valoreorig[0] + $valore);
 		$sql="UPDATE tb_conto_economico SET valore = '$nuovovalore' WHERE descrizione = '$contoec'"; //inserisco i valori nel database
 		$result=mysqli_query($connect, $sql);
 
-   		redirect('./conferma.php' ,2);
+   		redirect('./conferma.php?rif=InsPrimanota' ,2);
 		// break;
 die ("");
 
