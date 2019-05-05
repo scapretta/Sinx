@@ -117,9 +117,9 @@ EOM;
 
 while ($riga=mysqli_fetch_array($ris))
 {
-$modpagamento=$riga[modpaga];
-$valiva=$riga[euro]*($riga[iva]/100);
-$imponibile=$riga[euro];
+$modpagamento=$riga["modpaga"];
+$valiva=$riga["euro"]*($riga['iva']/100);
+$imponibile=$riga['euro'];
 echo <<<EOM
 	<tr>
 	<td height='35px'><small>$riga[quantita]</small></td>
