@@ -55,8 +55,13 @@ if ($handle_dir = opendir($base)) # Apre la directory, e verifica che il percors
               if ($dir != "." && $dir != "..")
             {
 
-                   $lista[]=('<LI style="list-style-image: url(./ImmTemplate/doc.png)"><A href="' .$base . '/' . $dir . '">' . str_replace('_', ' ', substr($dir,0, strrpos($dir,"."))) . "</A></LI>\n");
-              }
+					$lista[]=('<LI style="list-style-image: url(./ImmTemplate/doc.png)"><A href="' .$base . '/' . $dir . '">' . str_replace('_', ' ', substr($dir,0, strrpos($dir,"."))) . "</A></LI>\n");
+					sort($lista);
+					foreach ($lista as $nlista)
+					{
+						echo $nlista. "\n";
+					}
+            }
       }
     }
 
@@ -65,11 +70,6 @@ if ($handle_dir = opendir($base)) # Apre la directory, e verifica che il percors
     if ($dir_vuota==1) echo '<LI class="testo" style="list-style-image: url(foto/sbagliato.gif)">Nessun file presente</LI>';    
   echo "</UL><BR>";    
   closedir($handle_dir);
-	sort($lista);
-	foreach ($lista as $nlista)
-	 {
-	  echo $nlista. "\n";
-	 }
 	}
 else #Codice nel caso di percorso non trovato
 {
@@ -114,17 +114,15 @@ closedir($handle);
 reset($dirs); sort($dirs); reset($dirs);
 reset($files); sort($files); reset($files);
 
-//echo "<strong>Cartelle:</strong>\n<ul>";
-
-
-while(list($key, $valuef) = each($files))
+foreach ($files as $name => $value)
 {
 //ELENCO FILE
 $f++; echo "<li><a href=\"{$directory}{$valuef}\">{$valuef}</a>\n"; }
 echo "</ul>\n";
 echo "\n<ul>";
 
-while(list($key, $value) = each($dirs))
+foreach ($dirs as $name => $value)
+
 {
 //ELENCO CARTELLE
 $d++;
