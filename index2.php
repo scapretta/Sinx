@@ -115,7 +115,7 @@ $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
 	 </td>
 	</tr>
 	<tr>
-	  <td><textarea name='formcontent' rows="5" cols="100%" readonly><? echo $row[testo] ?></textarea></td>
+	  <td><textarea name='formcontent' rows="5" cols="100%" readonly><? echo $row['testo'] ?></textarea></td>
 	</tr>
 </table>
 <?php
